@@ -1,0 +1,139 @@
+.skills {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.skills h3 {
+  font-size: 20px;
+  margin-top: 0;
+  color: #ff9800;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.skills p {
+  font-size: 14px;
+}
+
+.skill-icon {
+  display: block;
+  width: 100%;
+  font-size: 3rem;
+  text-align: center;
+  color: #ff9800;
+}
+
+.revs-carousel {
+  position: relative;
+  text-align: center;
+}
+
+.revs-carousel .owl-carousel .owl-stage-outer {
+  padding-bottom: 30px;
+}
+
+.revs-carousel .owl-dots {
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 100%;
+  height: 8px;
+  text-align: center;
+}
+
+.revs-carousel .owl-dots .owl-dot {
+  margin: 0 3px;
+  display: inline-block;
+  vertical-align: top;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #ff9800;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+}
+
+.revs-carousel .owl-dot.active {
+  background: #ff9800;
+}
+
+.revs-item {
+  position: relative;
+  text-align: center;
+  max-width: 648px;
+  width: 100%;
+}
+
+.revs-item .text {
+  margin-bottom: 30px;
+  padding: 0 30px;
+  position: relative;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 300;
+  font-style: italic;
+  opacity: 0.65;
+}
+
+.revs-item .text:before,
+.revs-item .text:after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 14px;
+  height: 14px;
+  background-size: contain;
+  opacity: 0.65;
+}
+
+.revs-item .text:after {
+  left: auto;
+  top: auto;
+  right: 3px;
+  bottom: 3px;
+  transform: scale(-1);
+  -webkit-transform: scale(-1);
+}
+
+.revs-item .user .img {
+  margin: 0 auto;
+  display: block;
+  width: 60px;
+}
+
+.revs-item .user .img img {
+  width: 100%;
+  height: auto;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+}
+
+.revs-item .info .name {
+  margin: 6px 0 0 0;
+  font-size: 17px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.revs-item .info .company {
+  font-size: 14px;
+  color: #999999;
+  font-weight: 400;
+}
+
+.coming-soon {
+  margin: auto;
+}
+
+.coming-soon svg {
+  display: block;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+}
+
+.coming-soon .coming-soon-text {
+  text-align: center;
+  padding: 0;
+  color: #fff;
+}

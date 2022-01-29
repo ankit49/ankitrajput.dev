@@ -1,0 +1,221 @@
+.card-inner {
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+  left: 560px;
+  top: 15px;
+  right: 0;
+  bottom: 15px;
+  width: auto;
+  height: auto;
+  background: #31313a;
+
+  transform-origin: center left;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 8;
+  border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  -webkit-border-radius: 0 4px 4px 0;
+  -khtml-border-radius: 0 4px 4px 0;
+  transition: visibility 1s linear, opacity 0s linear;
+  -moz-transition: visibility 1s linear, opacity 0s linear;
+  -webkit-transition: visibility 1s linear, opacity 0s linear;
+  -o-transition: visibility 1s linear, opacity 0s linear;
+}
+
+.card-inner.animated {
+  opacity: 1;
+  visibility: visible;
+  z-index: 9;
+}
+
+.card-inner.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+.card-inner.hidden {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9;
+}
+
+.card-inner:before,
+.card-inner:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 20px;
+  height: 30px;
+  background: #31313a;
+  z-index: 10;
+}
+
+.card-inner:after {
+  top: auto;
+  bottom: 0;
+}
+
+.card-inner .card-wrap {
+  padding: 30px 30px 0px 50px;
+  position: relative;
+  overflow: auto;
+  overflow-x: hidden;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.card-section {
+  margin: 0 0 40px 0;
+  position: relative;
+}
+
+.card-section:last-child {
+  margin-bottom: 30px;
+}
+
+.card-section .title {
+  margin: 0;
+  padding: 0 0 30px 0;
+  position: relative;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.85);
+  min-height: 51px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.card-section .title.no-title:before {
+  display: none;
+}
+
+.card-section .title .first-word,
+.card-section .title:first-letter,
+.card-section .title .first-letter::first-letter {
+  color: #ff9800;
+}
+
+.card-section .title:before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  background: -moz-linear-gradient(
+    -45deg,
+    rgba(255, 152, 0, 0.4) 0%,
+    rgba(255, 152, 0, 0.01) 100%
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    rgba(255, 152, 0, 0.4) 0%,
+    rgba(255, 152, 0, 0.01) 100%
+  );
+  background: linear-gradient(
+    135deg,
+    rgba(255, 152, 0, 0.4) 0%,
+    rgba(255, 152, 0, 0.01) 100%
+  );
+  z-index: -1;
+  border-radius: 30px;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -khtml-border-radius: 30px;
+}
+
+.card-section .title:after {
+  content: "";
+  position: absolute;
+  left: -30px;
+  right: 0;
+  bottom: 0px;
+  width: auto;
+  height: 1px;
+  background: -moz-radial-gradient(
+    left,
+    ellipse cover,
+    rgba(197, 202, 213, 0.15) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  background: -webkit-radial-gradient(
+    left,
+    ellipse cover,
+    rgba(197, 202, 213, 0.15) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  background: radial-gradient(
+    ellipse at left,
+    rgba(197, 202, 213, 0.15) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+@media (max-width: 1199px) {
+  .card-inner {
+    position: relative;
+    margin: 15px 0;
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+    border-radius: 4px;
+  }
+  .card-inner .card-wrap {
+    overflow: visible;
+    height: auto;
+  }
+}
+
+@media (max-width: 1023px) {
+  .card-inner {
+    position: relative;
+    margin: 15px 0;
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .card-inner .card-wrap {
+    padding: 30px 30px 30px 40px;
+    overflow: visible;
+    height: auto;
+  }
+
+  .card-inner:last-child {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 680px) {
+  .card-inner:before,
+  .card-inner:after {
+    height: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .card-inner {
+    margin: 10px 0;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -khtml-border-radius: 4px;
+  }
+
+  .card-inner .card-wrap {
+    padding: 30px;
+  }
+
+  .card-inner:last-child {
+    margin-bottom: 10px;
+  }
+}

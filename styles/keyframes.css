@@ -1,0 +1,53 @@
+@keyframes bounce {
+  from,
+  to {
+    transform: translateY(0) scale(1, 1);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: translateY(5em) scale(1, 1);
+    animation-timing-function: linear;
+  }
+  50% {
+    transform: translateY(5em) scale(1.5, 0.5);
+    animation-timing-function: linear;
+  }
+  100% {
+    transform: translateY(5em) scale(1, 1);
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes bounceShadow {
+  from,
+  to {
+    transform: translateY(5em) scale(0.5);
+    filter: blur(5px);
+  }
+  45% {
+    transform: translateY(5em) scale(0.5);
+    /*     transform: translateY(5em) scale(1); */
+    /*     filter: blur(5px); */
+  }
+  50% {
+    box-shadow: 20px 0 5px rgba(0, 0, 0, 0.1), -20px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: translateY(5em) scale(0.5);
+    box-shadow: unset;
+  }
+}
+
+@keyframes bottomToTop {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}

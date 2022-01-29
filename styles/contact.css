@@ -1,0 +1,149 @@
+input,
+textarea {
+  display: block;
+  font-family: "Poppins";
+  width: 100%;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  resize: none;
+  outline: 0;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -khtml-border-radius: 0px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  height: 50px;
+  color: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-bottom: 1px solid #666;
+}
+
+.button {
+  display: inline-block;
+  float: none;
+  width: auto;
+  height: 50px;
+  line-height: 50px;
+}
+
+::-webkit-input-placeholder {
+  color: #999999;
+}
+
+:-moz-placeholder {
+  color: #999999;
+}
+
+::-moz-placeholder {
+  color: #999999;
+}
+
+:-ms-input-placeholder {
+  color: #999999;
+}
+
+textarea:focus,
+input:focus {
+  border-color: #ff9800;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder,
+input:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder,
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder,
+input:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+input.error,
+textarea.error {
+  border: none !important;
+  border-bottom: 2px solid red !important;
+}
+
+label.error {
+  display: none !important;
+}
+
+input.error::-moz-placeholder,
+textarea.error::-moz-placeholder {
+  color: #ff0000;
+}
+
+input.error:-moz-placeholder,
+textarea.error:-moz-placeholder {
+  color: #ff0000;
+}
+
+input.error:-ms-input-placeholder,
+textarea.error:-ms-input-placeholder {
+  color: #ff0000;
+}
+
+input.error::-webkit-input-placeholder,
+textarea.error::-webkit-input-placeholder {
+  color: #ff0000;
+}
+
+textarea {
+  height: 94px;
+}
+
+.contact_form .row p {
+  display: none;
+}
+
+.contact-me .row .row .col {
+  padding-bottom: 30px;
+}
+
+.contact-me .row .row .col.col-d-6:nth-child(1) {
+  padding-right: 15px;
+}
+
+.contact-me .row .row .col.col-d-6:nth-child(2) {
+  padding-left: 15px;
+}
+
+.contact_form input[type="checkbox"],
+.contact_form input[type="radio"] {
+  margin: 0 5px 0 0;
+  display: inline;
+  width: auto;
+  height: auto;
+}
+.checkbox label br {
+  display: none;
+}
+
+.contact-me .alert-success {
+  display: none;
+}
+
+.alert-success p {
+  margin: 0;
+  font-size: 17px;
+}
+
+.contact-me .map {
+  margin: 0 0 20px 0;
+  height: 200px;
+}
+
+.contact-me .map .coming-soon svg {
+  padding-top: 10px;
+  height: 150px;
+  width: 150px;
+}
