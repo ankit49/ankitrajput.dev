@@ -1,3 +1,9 @@
+@media (max-height: 1500px) {
+  body {
+    overflow: visible;
+    height: auto;
+  }
+}
 @media (max-width: 1400px) {
     .container {
       margin: 5vh 3vw;
