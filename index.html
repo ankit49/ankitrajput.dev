@@ -13,6 +13,10 @@
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css"
     />
@@ -30,8 +34,6 @@
     <link rel="stylesheet" href="./styles/keyframes.css" />
     <link rel="stylesheet" href="./styles/general.css" />
     <link rel="stylesheet" href="./styles/media.css" />
-    <link rel="stylesheet" href="./styles/home.css" />
-    <link rel="stylesheet" href="./styles/cards.css" />
   </head>
   <body>
     <!------------ Background ------------>
@@ -52,7 +54,7 @@
             </a>
           </div>
           <div class="profile-title">Ankit Rajput</div>
-          <p>Full Stack Web Developer</p>
+          <p class="profile-subtitle">Full Stack Web Developer</p>
         </div>
         <!-- menu -->
         <div class="nav-bar">
@@ -85,7 +87,7 @@
         </div>
       </header>
       <!------------Home Layout ------------>
-      <div class="card-home" id="home-card">
+      <div class="card-left" id="home-card">
         <!-- Profile -->
         <div class="profile-home">
           <!-- profile image -->
@@ -102,7 +104,7 @@
           <!-- profile titles -->
           <div class="profile-title">Ankit Rajput</div>
 
-          <p>Full Stack Web Developer</p>
+          <p class="profile-subtitle">Full Stack Web Developer</p>
 
           <!-- profile socials -->
           <div class="social">
@@ -139,17 +141,150 @@
         </div>
       </div>
       <!------------About Layout ------------>
-      <div class="card-inner animated active" id="about-card"></div>
+      <section class="card-right animated active" id="about-card">
+        <div class="card-wrapper">
+          <div class="section section-about">
+            <p class="title-top">Hi there, I'm</p>
+            <p class="title-bottom">
+              <span class="first-letter">A</span>nkit
+              <span class="first-letter">R</span>ajput
+            </p>
+            <p>
+              A Full Stack Web Developer, (Based in New Delhi, India) passionate
+              about creating interactive applications and experiences on the
+              web.
+            </p>
+            <p>
+              I'm a web developer with a focus on the MERN stack, but still
+              exploring other technologies and frameworks that catch my
+              interest! if you're looking for a developer to add to your team,
+              I'd love to hear from you!
+            </p>
+          </div>
+          <div class="section section-resume">
+            <div class="title-top">Resume</div>
+            <p class="title-bottom">My Career so far...</p>
+            <div class="resume-body hr">
+              <div class="resume-title">Experience</div>
+              <div class="row section-body">
+                <div class="col-md-6">
+                  <table class="resume-duration">
+                    <tr class="superscript">
+                      <td>Aug</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr class="resume-year">
+                      <td>2021</td>
+                      <td class="dash">-</td>
+                      <td>Present</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col-md-6 h-saperator">
+                  <div class="location-position">Senior Software Engineer</div>
+                  <div class="resume-location">
+                    Agiliad Technologies Pvt. Ltd.
+                  </div>
+                </div>
+              </div>
+              <div class="row section-body">
+                <div class="col-md-6">
+                  <table class="resume-duration">
+                    <tr>
+                      <td class="superscript">Mar</td>
+                      <td></td>
+                      <td class="superscript">Aug</td>
+                    </tr>
+                    <tr class="resume-year">
+                      <td>2020</td>
+                      <td class="dash">-</td>
+                      <td>2021</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col-md-6 h-saperator">
+                  <div class="location-position">Software Engineer</div>
+                  <div class="resume-location">
+                    Agiliad Technologies Pvt. Ltd.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="resume-body">
+              <div class="resume-title">Education</div>
+              <div class="row section-body">
+                <div class="col-md-6">
+                  <table class="resume-duration">
+                    <tr>
+                      <td class="superscript">Sept</td>
+                      <td></td>
+                      <td class="superscript">Feb</td>
+                    </tr>
+                    <tr class="resume-year">
+                      <td>2019</td>
+                      <td class="dash">-</td>
+                      <td>2020</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col-md-6 h-saperator">
+                  <div class="resume-position">
+                    Post Graduation diploma in Advance computing.
+                  </div>
+                  <div class="resume-location">CDAC, Noida</div>
+                </div>
+              </div>
+              <div class="row section-body">
+                <div class="col-md-6">
+                  <table class="resume-duration">
+                    <tr>
+                      <td class="superscript">July</td>
+                      <td></td>
+                      <td class="superscript">May</td>
+                    </tr>
+                    <tr class="resume-year">
+                      <td>2014</td>
+                      <td class="dash">-</td>
+                      <td>2018</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col-md-6 h-saperator">
+                  <div class="resume-position">B.Tech Computer Science</div>
+                  <div class="resume-location">
+                    Dr. APJ Abdul Kalam Technical University
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <!------------Skills Layout ------------>
-      <div class="card-inner" id="skills-card">ddg</div>
+      <section class="card-right" id="skills-card">
+        <div class="card-wrapper">
+          skills
+          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />hello
+        </div>
+      </section>
       <!------------Project Layout ------------>
-      <div class="card-inner" id="projects-card">fdgfdg</div>
+      <section class="card-right" id="projects-card">
+        <div class="card-wrapper">
+          work<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />hello
+        </div>
+      </section>
       <!------------Contact Layout ------------>
-      <div class="card-inner" id="contacts-card">fdgfdgdf</div>
+      <section class="card-right" id="contacts-card">
+        <div class="card-wrapper">
+          contact<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />hello
+        </div>
+      </section>
     </div>
 
     <!------------ Scripts ------------>
     <script src="./scripts/jquery.min.js"></script>
+    <script src="./scripts/jquery.slimscroll.js"></script>
     <script src="scripts/main.js"></script>
   </body>
 </html>

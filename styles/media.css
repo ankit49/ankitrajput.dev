@@ -1,7 +1,6 @@
 @media (max-height: 1500px) {
   body {
     overflow: visible;
-    height: auto;
   }
 }
 @media (max-width: 1400px) {
@@ -53,7 +52,49 @@
         height: auto;
         display: block;
     }
-      
+    .card-left {
+      position: relative;
+      float: none;
+      width: auto;
+      height: auto;
+    }
+    .card-left .profile-home {
+      height: 600px;
+    }
+    .card-right {
+      position: relative;
+      margin: 15px 0;
+      left: 0;
+      top: 0;
+      width: auto;
+      height: auto;
+      opacity: 1;
+      visibility: visible;
+      border-radius: 4px;
+    }
+    .card-right .card-wrapper {
+      overflow: visible;
+      padding: 30px;
+      height: auto;
+    }
+    .card-right:last-child {
+      margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 770px) {
+  .resume-duration {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+  .resume-location {
+    margin-bottom: 10px;
+  }
+
+  .h-saperator {
+    border: none;
+  }
+  
 }
   
 @media (max-width: 560px) {
@@ -130,5 +171,23 @@
         -khtml-border-radius: 0 4px 4px 0;
       }
     
+      .card-left:after {
+        display: none;
+      }
+    
+      .card-left .profile-home {
+        height: calc(100vh - 102px);
+        min-height: 560px;
+        padding: 135px 25px 25px 25px;
+      }
+      .card-left .profile-home .profile-image {
+        margin: 0 0 15px 0;
+        width: 124px;
+      }
+    
+      .card-left .profile-home .profile-title {
+        font-size: 28px;
+        line-height: 28px;
+      }
 }
   
