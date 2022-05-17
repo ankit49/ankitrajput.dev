@@ -810,24 +810,11 @@ a {
   height: 4px;
 }
 
-.skill-list.dotted ul li .progress {
-  background: transparent !important;
-}
-
 .skill-list ul li .progress .percentage {
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
   background: #ff9800;
-}
-
-.skill-list.dotted ul li .progress .percentage {
-  position: relative;
-  overflow: hidden;
-  top: -2px;
-  height: 14px;
-  background: transparent !important;
-  z-index: 2;
 }
 
