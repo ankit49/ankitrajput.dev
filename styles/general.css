@@ -9,6 +9,9 @@ Table of Content
 5. Card Left css
 6. Card Right css
   6.1 About css
+  6.2 Skill css
+  6.4 Contact css 
+
 */
 
 /******************** 1. General css  ********************/
@@ -57,6 +60,14 @@ a {
   opacity: 1;
   outline: none;
   color: rgba(255, 255, 255, 0.55);
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
 }
 
 .hr:after {
@@ -727,7 +738,8 @@ a {
   color: #ff9800;
 }
 
-/*********** 6.1 Skill css ***********/
+/*********** 6.2 Skill css ***********/
+
 .skill-title {
   padding: 20px 0 30px 0;
   position: relative;
@@ -818,3 +830,68 @@ a {
   background: #ff9800;
 }
 
+/*********** 6.4 Contact css ***********/
+
+.section .contact-info {
+  font-size: 18px;
+}
+
+form {
+  padding-bottom: 20px;
+}
+
+.form-input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  background: none;
+  color: #ffffff;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-image: 
+    linear-gradient(
+      #dddddd, 
+      rgba(255, 255, 255, 0)
+    ) 10 15%;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background: none;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-image: 
+    linear-gradient(
+      #dddddd, 
+      rgba(255, 255, 255, 0)
+    ) 10 15%;
+}
+
+.form-input:focus,
+textarea:focus,
+.form-input:hover,
+textarea:hover,
+.button:hover{
+  outline: none;
+  border-image: 
+    linear-gradient(
+      #ff9800, 
+      rgba(255, 255, 255, 0)
+    ) 10 15%; ;
+}
+
+.button:hover{
+  color: #ff9800;
+}
+
+.carousel-inner>.carousel-item {
+  width: 100%;
+
+}
