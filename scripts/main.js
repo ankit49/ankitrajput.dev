@@ -1,7 +1,7 @@
 function setHeights() {
   var heights = [];
   $(".carousel-item").each(function () {
-    heights.push($(this).height());
+    heights.push($(this).height() + 5);
   });
 
   $(".carousel-item").height(Math.max(...heights));

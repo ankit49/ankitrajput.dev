@@ -77,8 +77,9 @@
       padding: 30px;
       height: auto;
     }
-    .card-right:last-child {
-      margin-bottom: 50px;
+
+    .section {
+      margin-bottom: 20px;
     }
 }
 
