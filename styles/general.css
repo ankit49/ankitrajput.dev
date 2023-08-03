@@ -27,7 +27,7 @@ Table of Content
 body {
   color: rgba(255, 255, 255, 0.55);
   background: #292930;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
@@ -64,7 +64,7 @@ a {
 }
 
 .highlighter {
-  color: #e2e8f0
+  color: #e2e8f0;
 }
 
 .center {
@@ -174,7 +174,7 @@ a {
   width: 100%;
   height: 70px;
   line-height: 70px;
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.85);
   font-weight: 500;
   text-align: center;
@@ -183,49 +183,15 @@ a {
   border: none;
 }
 
-.btn:before {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 1px;
-  height: 100%;
-  background: -moz-radial-gradient(
-    top,
-    ellipse cover,
-    #dddddd 0%,
-    rgba(255, 255, 255, 0) 70%
-  );
-  background: -webkit-radial-gradient(
-    top,
-    ellipse cover,
-    #dddddd 0%,
-    rgba(255, 255, 255, 0) 70%
-  );
-  background: radial-gradient(
-    ellipse at top,
-    #dddddd 0%,
-    rgba(255, 255, 255, 0) 70%
-  );
-}
-
-.btn:last-child:before {
-  display: none;
-}
-
-.btn:hover{
+.btn:hover {
   color: #5de8d3;
 }
 
 .h-saperator {
   border-width: 1px;
   border-style: solid;
-  border-image: 
-    linear-gradient(
-      to bottom, 
-      #dddddd, 
-      rgba(255, 255, 255, 0)
-    ) 1 100%;
+  border-image: linear-gradient(to bottom, #dddddd, rgba(255, 255, 255, 0)) 1
+    100%;
   border-right: none;
 }
 
@@ -243,7 +209,7 @@ a {
 /******************** 2. Background css ********************/
 
 .background {
-  background: url('../images/background.jpg') no-repeat center center fixed;
+  background: url("../images/background.jpg") no-repeat center center fixed;
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -685,8 +651,8 @@ a {
 
 .section .title-top {
   font-size: 18px;
-  font-family: 'Dancing Script', cursive;
-  margin:0 0 0 5px;
+  font-family: "Dancing Script", cursive;
+  margin: 0 0 0 5px;
 }
 
 .section .title-bottom {
@@ -696,7 +662,6 @@ a {
 }
 
 /*********** 6.1 About css ***********/
-
 
 /*********** 6.2 Skill css ***********/
 
@@ -709,10 +674,10 @@ a {
   line-height: 1;
   font-size: 24px;
   background: transparent;
-    color: #5de8d3;
-    position: relative;
-      float: left;
-      padding-right: 10px;
+  color: #5de8d3;
+  position: relative;
+  float: left;
+  padding-right: 10px;
 }
 
 .skill-title .icon .fa {
@@ -763,7 +728,8 @@ a {
   left: 0;
   top: 0;
   display: inline-block;
-  font-family: "Font Awesome 5 Free"; content: "\f14a";
+  font-family: "Font Awesome 5 Free";
+  content: "\f14a";
 }
 
 .skill-list ul li .progress {
@@ -785,7 +751,7 @@ a {
   margin-bottom: 10px;
 }
 
-.skill-box .box-content{
+.skill-box .box-content {
   display: flex;
   align-items: center;
   padding: 20px;
@@ -793,7 +759,8 @@ a {
   transition: ease-in-out 0.3s;
 }
 
-.skill-box i, .skill-box img {
+.skill-box i,
+.skill-box img {
   font-size: 32px;
   padding-right: 10px;
   line-height: 1;
@@ -807,33 +774,47 @@ a {
   color: #e2e8f0;
   line-height: 1;
 }
-/*********** 6.3 Resume css ***********/
+/********************** 6.3 Resume css **********************/
 
-.resume-body {
+.resume-card .block {
   margin-bottom: 30px;
 }
 
-.resume-title {
+.resume-card .title {
   font-size: 22px;
   color: #ffffff;
   margin-bottom: 15px;
 }
 
-.resume-duration {
+.resume-card .duration {
   margin-bottom: 10px;
 }
 
-.section-body {
+.resume-card .duration .superscript {
+  font-family: "Dancing Script", cursive;
+  font-size: 14px;
+  text-align: center;
+}
+
+.resume-card .duration .year {
+  color: #5de8d3;
+}
+
+.resume-card .duration .dash {
+  padding: 0 5px;
+}
+
+.resume-card .content {
   padding: 0 0 20px 20px;
   border-left: 2px solid rgba(255, 255, 255, 0.2);
   position: relative;
 }
 
-.section-body p{
+.resume-card .content p {
   margin: 0;
 }
 
-.section-body::before {
+.resume-card .content::before {
   content: "";
   position: absolute;
   width: 10px;
@@ -845,73 +826,103 @@ a {
   border: 2px solid #5de8d3;
 }
 
-.superscript {
-  font-family: 'Dancing Script', cursive;
-  font-size: 14px;
-  text-align: center;
+.resume-card .content .position {
+  font-size: 18px;
 }
 
-.resume-position {
-  font-size: 16px;
-}
-
-.resume-location {
-  font-size: 12px;
+.resume-card .content .location {
+  font-size: 13px;
   padding-bottom: 10px;
 }
 
-.dash {
-  padding: 0 5px;
+.resume-card .content .roles {
+  font-size: 14px;
 }
 
-.resume-year {
+.resume-card .content .roles .role-item {
+  margin: 0 0 5px 0;
+  padding-left: 20px;
+  position: relative;
+}
+
+.resume-card .content .roles .role-item:before {
   color: #5de8d3;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  content: "\f14a";
 }
 
-/*********** 6.4 Contact css ***********/
-
-.section-contact .info-box {
-    padding: 20px;
-    width: 100%;
-    margin-top: 10px;
-    background: rgba(255, 255, 255, 0.08);
+.resume-card .content .skill {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
-.section-contact .info-box i{
-    font-size: 24px;
-      color: #5de8d3;
-      border-radius: 50%;
-      padding: 14px;
-      float: left;
-      background: rgba(255, 255, 255, 0.1);
+.resume-card .content .skill li {
+  margin-top: 5px;
+  margin-right: 5px;
 }
 
-.section-contact .info-box h3 {
+.resume-card .content .skill-item {
+  color: #5de8d3;
+  line-height: 1.75;
+  font-weight: 500;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 12px;
+  background-color: rgba(23, 250, 220, 0.2);
+  border-radius: 100px;
+}
+
+/********************** 6.4 Contact css **********************/
+
+.contact-card .info-box {
+  padding: 20px;
+  width: 100%;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-card .info-box i {
+  font-size: 24px;
+  color: #5de8d3;
+  border-radius: 50%;
+  padding: 14px;
+  float: left;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.contact-card .info-box h3 {
   font-size: 20px;
-    color: rgba(255, 255, 255, 0.5);
-    font-weight: 700;
-    margin: 10px 0 8px 68px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 700;
+  margin: 10px 0 8px 68px;
 }
 
-.section-contact .info-box p {
+.contact-card .info-box p {
   padding: 0;
-    color: #fff;
-    line-height: 24px;
-    word-wrap:break-word;
-    font-size: 14px;
-    margin: 0 0 0 68px;
+  color: #fff;
+  line-height: 24px;
+  word-wrap: break-word;
+  font-size: 14px;
+  margin: 0 0 0 68px;
 }
 
-.contact-form {
-      padding: 30px;
-        background: rgba(255, 255, 255, 0.08);
-        margin-top: 20px;
+.contact-card .form {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  margin-top: 20px;
 }
 
-.contact-form input,
-.contact-form textarea,
-.contact-form input:focus,
-.contact-form textarea:focus{
+.contact-card .form input,
+.contact-card .form textarea,
+.contact-card .form input:focus,
+.contact-card .form textarea:focus {
   border-radius: 0;
   box-shadow: none;
   font-size: 14px;
@@ -921,31 +932,8 @@ a {
   color: #fff;
 }
 
-.contact-form .loading {
-  display: none;
-  background: rgba(255, 255, 255, 0.08);
-  text-align: center;
-  padding: 15px;
-}
-
-.contact-form .error-message {
-  display: none;
-  background: rgba(255, 255, 255, 0.08);
-  background: #ed3c0d;
-  text-align: left;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact-form .sent-message {
-  display: none;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact-form button {
+.contact-card .form button {
+  margin-top: 20px;
   background: #5de8d3;
   border: 0;
   padding: 10px 30px;
