@@ -76,7 +76,7 @@ $(function () {
       /* scroll to section */
       $("body,html").animate(
         {
-          scrollTop: h - 140,
+          scrollTop: h - 125,
         },
         800
       );
