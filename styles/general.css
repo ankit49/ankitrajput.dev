@@ -63,6 +63,10 @@ a {
   color: rgba(255, 255, 255, 0.55);
 }
 
+a:hover {
+  color: #5de8d3;
+}
+
 .highlighter {
   color: #e2e8f0;
 }
