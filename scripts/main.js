@@ -1,6 +1,7 @@
 let currentTheme = localStorage.getItem("theme") ? localStorage.getItem("theme") : "dark";
 let navLinks = document.querySelectorAll(".navbar a");
 let sections = document.querySelectorAll("section");
+let udemy = document.querySelectorAll(".udemy");
 let isMobileNavOpen = false;
 document.body.classList.add(currentTheme == "light" ? "light" : "dark");
 
@@ -16,6 +17,9 @@ function switchMode() {
     localStorage.setItem("theme", "light");
     currentTheme = "light";
   }
+  udemy.forEach((el) => {
+    el.src = currentTheme == "dark" ? "./images/resume/udemy-light.png" : "./images/resume/udemy-dark.png";
+  });
 }
 
 function toggleMobileNav() {
@@ -87,7 +91,7 @@ function scrollToSection(event) {
 }
 
 const copyContent = async (element) => {
-  let text = document.getElementById(element);
+  let text = document.getElementById(element).innerHTML;
   let tooltip = document.getElementById(element == "email" ? "email-tooltip" : "phone-tooltip");
   try {
     await navigator.clipboard.writeText(text);
@@ -104,6 +108,10 @@ const copyContent = async (element) => {
 window.onload = function () {
   navLinks.forEach(function (link) {
     link.addEventListener("click", scrollToSection);
+  });
+
+  udemy.forEach((el) => {
+    el.src = currentTheme == "dark" ? "./images/resume/udemy-light.png" : "./images/resume/udemy-dark.png";
   });
 
   window.addEventListener("scroll", updateActiveSection);
