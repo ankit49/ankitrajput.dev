@@ -1,0 +1,23 @@
+{
+  "name": "ankitrajput.dev",
+  "version": "1.0.0",
+  "description": "Portfolio website for Ankit Rajput",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tailwindcss -i ./styles/input.css -o ./styles/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankit49/ankitrajput.dev.git"
+  },
+  "author": "Ankit Rajput",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankit49/ankitrajput.dev/issues"
+  },
+  "homepage": "https://github.com/ankit49/ankitrajput.dev#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.9"
+  }
+}

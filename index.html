@@ -8,599 +8,438 @@
     <title>Ankit Rajput</title>
 
     <!------------ Fonts ------------>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <!------------ Bootstrap ------------>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
     <!------------ Css ------------>
-    <link rel="stylesheet" href="./styles/animate.css" />
-    <link rel="stylesheet" href="./styles/keyframes.css" />
-    <link rel="stylesheet" href="./styles/general.css" />
-    <link rel="stylesheet" href="./styles/media.css" />
+    <link rel="stylesheet" href="./styles/output.css" />
   </head>
-  <body>
-    <!------------ Background ------------>
-    <div class="background"></div>
-    <!------------ Container ------------>
-    <div
-      class="container opened"
-      data-animation-in="fadeInLeft"
-      data-animation-out="fadeOutLeft"
-    >
-      <!------------Header ------------>
-
-      <header class="header">
-        <!-- header profile -->
-        <div class="profile">
-          <div class="image">
-            <a href="#">
-              <img src="images/profile.png" alt="Ankit Rajput" />
-            </a>
+  <body class="text-secondaryText">
+    <!-- Navbar -->
+    <header class="fixed top-0 bg-secondaryBg w-full z-50">
+      <div class="max-w-screen-xl mx-6 xl:m-auto flex justify-between items-center py-5">
+        <div class="font-bold text-3xl leading-9 text-primaryText">&lt; AR /&gt;</div>
+        <nav id="desktopNav" class="navbar hidden lg:flex gap-7">
+          <a class="home font-semibold text-highlighter border-b-2 border-highlighter" href="#home">Home</a>
+          <a class="about font-semibold" href="#about">About</a>
+          <a class="skills font-semibold" href="#skills">Skills</a>
+          <a class="resume font-semibold" href="#resume">Resume</a>
+          <a class="contact font-semibold" href="#contact">Contact</a>
+        </nav>
+        <div class="flex gap-6">
+          <div onclick="switchMode()" class="relative hover:cursor-pointer flex w-10 h-10 justify-center items-center">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+            <i class="fa-solid fa-lightbulb"></i>
           </div>
-          <div class="profile-title">Ankit Rajput</div>
-          <p class="profile-subtitle">Full Stack Web Developer</p>
-        </div>
-        <!-- menu -->
-        <div class="nav-bar">
-          <ul>
-            <li class="active">
-              <a href="#about-card" class="v-saperator">
-                <span class="icon fa fa-user"></span>
-                <span class="link">About</span>
-              </a>
-            </li>
-            <li>
-              <a href="#skills-card" class="v-saperator">
-                <span class="icon fa fa-list-alt"></span>
-                <span class="link">Skills</span>
-              </a>
-            </li>
-            <li>
-              <a href="#resume-card" class="v-saperator">
-                <span class="icon fa-solid fa-book"></span>
-                <span class="link">Resume</span>
-              </a>
-            </li>
-            <li>
-              <a href="#contacts-card" class="v-saperator">
-                <span class="icon fas fa-id-card"></span>
-                <span class="link">Contact</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </header>
-
-      <!------------Home Layout ------------>
-
-      <div class="card-left" id="home-card">
-        <!-- Profile -->
-        <div class="profile-home">
-          <!-- profile image -->
-          <div
-            class="profile-bg"
-            style="background-image: url(images/bg.jpg)"
-          ></div>
-
-          <!-- profile photo -->
-          <div class="profile-image">
-            <img src="images/profile.png" alt="" />
-          </div>
-
-          <!-- profile titles -->
-          <div class="profile-title">Ankit Rajput</div>
-
-          <p class="profile-subtitle">Full Stack Web Developer</p>
-
-          <!-- profile socials -->
-          <div class="social">
-            <a
-              target="_blank"
-              href="https://www.facebook.com/ankitrajput.delhi/"
-              ><span class="fab fa-facebook-square"></span
-            ></a>
-            <a target="_blank" href="https://twitter.com/its__AnKiT"
-              ><span class="fab fa-twitter"></span
-            ></a>
-            <a target="_blank" href="https://github.com/ankit49"
-              ><span class="fab fa-github"></span
-            ></a>
-            <a
-              target="_blank"
-              href="https://www.linkedin.com/in/ankit-rajput-365b5b199/"
-              ><span class="fab fa-linkedin"></span
-            ></a>
-            <a target="_blank" href="https://www.instagram.com/rajput__ankit/"
-              ><span class="fab fa-instagram"></span
-            ></a>
-          </div>
-
-          <!-- profile buttons -->
-          <div class="btns-wrapper">
-            <a
-              href="./resume/Ankit_Rajput.pdf"
-              attributes-list
-              download
-              class="btn"
-            >
-              <span class="text">Download CV</span>
-            </a>
+          <a href="./resume/Ankit_Rajput.pdf" attributes-list download>
+            <div class="relative hover:text-highlighter hover:cursor-pointer hidden lg:flex justify-center items-center gap-2 h-10 px-3">
+              <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+              <i class="fa-solid fa-download"></i>Download Resume
+            </div>
+          </a>
+          <div onclick="toggleMobileNav()" class="relative hover:text-highlighter hover:cursor-pointer flex lg:hidden w-10 h-10 justify-center items-center">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+            <i id="mobileNavToggler" class="fa-solid fa-bars"></i>
           </div>
         </div>
       </div>
+    </header>
 
-      <!------------About Layout ------------>
+    <!-- Navbar Mobile -->
+    <div id="mobileNav" class="fixed lg:hidden top-20 w-full py-5 md:pt-2 bg-secondaryBg transition-all ease-in-out duration-200 -translate-y-full z-10">
+      <div class="flex flex-col md:flex-row gap-5 md:gap-10 items-center md:justify-center">
+        <nav class="navbar flex flex-col md:flex-row gap-5 md:gap-10 items-center md:justify-center mx-6 lg:m-auto">
+          <a class="home font-semibold text-highlighter border-b-2 border-highlighter w-fit" href="#home">Home</a>
+          <a class="about font-semibold" href="#about">About</a>
+          <a class="skills font-semibold" href="#skills">Skills</a>
+          <a class="resume font-semibold" href="#resume">Resume</a>
+          <a class="contact font-semibold" href="#contact">Contact</a>
+        </nav>
+        <div class="w-fit">
+          <a href="./resume/Ankit_Rajput.pdf" attributes-list download>
+            <div class="relative hover:text-highlighter hover:cursor-pointer flex justify-center items-center gap-2 h-10 px-3">
+              <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+              <i class="fa-solid fa-download"></i>Download Resume
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
 
-      <section class="card-right animated active" id="about-card">
-        <div class="card-wrapper">
-          <div class="section section-about">
-            <p class="title-top">Something to know,</p>
-            <p class="title-bottom">About Me</p>
-            <p>
-              Hello and welcome to my portfolio! I'm thrilled to have you here.
-              My name is <span class="highlighter">Ankit</span>, and I am a
-              passionate <span class="highlighter">Web Developer</span> based in
-              the vibrant city of <span class="highlighter">New Delhi</span>,
-              <span class="highlighter">India</span>.
-            </p>
-            <p>
-              With a deep-rooted love for technology and a relentless drive for
-              innovation, I have dedicated my career to crafting elegant and
-              efficient software solutions. As a seasoned professional in the
-              field, I specialize in the MERN (<span class="highlighter"
-                >MongoDB</span
-              >, <span class="highlighter">Express.js</span>,
-              <span class="highlighter">React</span>,
-              <span class="highlighter">Node.js</span>) stack, which empowers me
-              to create dynamic and user-centric web applications.
-            </p>
-            <p>
-              What sets me apart is not only my technical proficiency but also
-              my collaborative spirit and problem-solving mindset. I take
-              immense pride in working seamlessly within
-              <span class="highlighter">cross-functional teams</span>, where I
-              can share my insights and learn from others.
-              <span class="highlighter">Communication</span> and
-              <span class="highlighter">teamwork</span> are essential to my
-              approach, as I believe that the best solutions emerge when diverse
-              perspectives converge.
-            </p>
-            <p>
-              Thank you for taking the time to learn about me. I invite you to
-              explore my <span class="highlighter">portfolio</span> and discover
-              my skills and experience that reflect my passion, dedication, and
-              the mark I strive to leave on the world of software engineering.
-              If you're looking to <span class="highlighter">collaborate</span>,
-              <span class="highlighter">innovate,</span> or simply have a
-              <span class="highlighter">chat</span>, I'd be delighted to
-              connect.
-            </p>
+    <div class="w-full mt-20 bg-primaryBg">
+      <!-- Hero Section -->
+      <section id="home" class="h-[calc(100vh-80px)]">
+        <div class="max-w-screen-xl mx-6 xl:m-auto flex items-center justify-center">
+          <div class="w-full flex flex-col h-[calc(100vh-80px)] md:flex-row justify-center md:justify-between items-center">
+            <div class="mt-10">
+              <div class="font-semibold text-6xl text-primaryText">Hi, I'm <span class="text-highlighter block lg:inline-block mt-5 lg:mt-0">Ankit Rajput</span></div>
+              <div class="mt-5 lg:mt-3 font-semibold text-2xl md:text-3xl lg:text-4xl">MERN Stack Developer</div>
+              <a href="./resume/Ankit_Rajput.pdf" attributes-list download>
+                <div class="relative hover:text-highlighter hover:cursor-pointer flex justify-center items-center gap-3 h-10 px-3 w-fit mt-8">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <i class="fa-solid fa-download"></i>Download Resume
+                </div>
+              </a>
+              <div class="mt-[150px] lg:mt-[200px]">
+                <div class="text-sm uppercase">find me on</div>
+                <div class="flex mt-4 gap-5">
+                  <div class="relative hover:text-highlighter hover:cursor-pointer flex w-10 h-10 justify-center items-center">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                    <i class="fa-brands fa-meta"></i>
+                  </div>
+                  <div class="relative hover:text-highlighter hover:cursor-pointer flex w-10 h-10 justify-center items-center">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                    <i class="fa-brands fa-github"></i>
+                  </div>
+                  <div class="relative hover:text-highlighter hover:cursor-pointer flex w-10 h-10 justify-center items-center">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </div>
+                  <div class="relative hover:text-highlighter hover:cursor-pointer flex w-10 h-10 justify-center items-center">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                    <i class="fa-brands fa-instagram"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <img class="hidden md:block md:w-[300px] lg:w-[400px]" src="./images/home-right.png" alt="Boy using laptop" />
+            </div>
           </div>
         </div>
       </section>
 
-      <!------------Skills Layout ------------>
-
-      <section class="card-right" id="skills-card">
-        <div class="card-wrapper">
-          <div class="section skills-card">
-            <p class="title-top">My Skills</p>
-            <p class="title-bottom">What I'm Best at...</p>
-
-            <div class="row">
-              <div class="core-skills">
-                <div class="skill-title">
-                  <i class="fa-solid fa-shield-halved icon"></i>
-                  <span class="name">Core Skills</span>
+      <!-- About Section -->
+      <section id="about" class="py-16">
+        <div class="max-w-screen-xl mx-6 xl:m-auto">
+          <div class="mx-auto w-fit">
+            <div class="font-dancing font-bold text-sm text-highlighter mb-1">A GLIMPSE INTO MY WORLD,</div>
+            <div class="text-5xl text-primaryText border-b-2 border-highlighter w-fit">About Me</div>
+          </div>
+          <div class="mt-10 md:flex md:justify-between items-center">
+            <div class="my-10 lg:ml-10">
+              <div class="relative flex justify-center items-center p-3 w-fit mx-auto">
+                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <img class="w-[230px] lg:w-[350px]" src="./images/profile.jpg" alt="Ankit Rajput" />
+              </div>
+            </div>
+            <div class="max-w-[400px] lg:max-w-[650px]">
+              <div class="font-medium leading-6 lg:leading-8 tracking-wider">
+                I'm a full-stack developer with over 4.5 years of experience building robust MERN stack applications. My passion lies in crafting seamless user experiences from conception to
+                deployment.<span class="mt-2 block">Currently expanding my skillset to include web design, I'm excited to bring fresh perspectives to my projects.</span>
+              </div>
+              <div class="flex justify-between mt-10 lg:mt-28 flex-wrap">
+                <div class="relative text-highlighter hover:cursor-pointer lg:h-[130px] lg:w-[150px] p-2 md:p-4">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <div class="lg:text-2xl"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                  <div class="mt-2 lg:mt-6 text-xs md:text-sm">
+                    WEB <br />
+                    DESIGNING
+                  </div>
                 </div>
-                <div class="skill-list">
-                  <ul class="row">
-                    <div class="col-md-6">
-                      <li>
-                        <div class="name">HTML</div>
-                        <div class="progress">
-                          <div class="percentage" style="width: 95%"></div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="name">JavaScript</div>
-                        <div class="progress">
-                          <div class="percentage" style="width: 85%"></div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="name">React Js</div>
-                        <div class="progress">
-                          <div class="percentage" style="width: 85%"></div>
-                        </div>
-                      </li>
-                    </div>
-                    <div class="col-md-6">
-                      <li>
-                        <div class="name">CSS</div>
-                        <div class="progress">
-                          <div class="percentage" style="width: 75%"></div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="name">Node Js</div>
-                        <div class="progress">
-                          <div class="percentage" style="width: 90%"></div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="name">Mongo DB</div>
-                        <div class="progress">
-                          <div class="percentage" style="width: 80%"></div>
-                        </div>
-                      </li>
-                    </div>
+
+                <div class="relative text-highlighter hover:cursor-pointer lg:h-[130px] lg:w-[150px] p-2 md:p-4">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <div class="lg:text-2xl"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                  <div class="mt-2 lg:mt-6 text-xs md:text-sm">
+                    MERN-APP <br />
+                    DEVELOPMENT
+                  </div>
+                </div>
+
+                <div class="relative text-highlighter hover:cursor-pointer lg:h-[130px] lg:w-[150px] p-2 md:p-4">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <div class="lg:text-2xl"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                  <div class="mt-2 lg:mt-6 text-xs md:text-sm">
+                    RESPONSIVE <br />
+                    LAYOUT
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="pt-16 pb-24">
+        <div class="max-w-screen-xl mx-6 xl:m-auto">
+          <div class="mx-auto w-fit">
+            <div class="font-dancing font-bold text-sm text-highlighter mb-1">WHAT I BRING TO THE TABLE,</div>
+            <div class="text-5xl text-primaryText border-b-2 border-highlighter w-fit leading-tight">My Skills</div>
+          </div>
+          <div class="flex flex-col lg:flex-row lg:justify-between mt-10 flex-wrap">
+            <div class="flex flex-col lg:items-center">
+              <div class="flex justify-center items-center w-full">
+                <div class="text-2xl text-primaryText border-b-2 border-highlighter w-fit">Backend</div>
+              </div>
+
+              <div class="flex justify-between flex-wrap lg:block">
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/node-js.png" alt="Node.Js" />
+                  <div class="text-lg md:text-2xl ml-4">Node.js</div>
+                </div>
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/express-js.png" alt="Express.Js" />
+                  <div class="text-lg md:text-2xl ml-4">Express.js</div>
+                </div>
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/mongo-db.png" alt="Mongo DB" />
+                  <div class="text-lg md:text-2xl ml-4">Mongo DB</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col lg:items-center">
+              <div class="flex justify-center items-center w-full">
+                <div class="text-2xl text-primaryText border-b-2 border-highlighter w-fit mt-5 lg:mt-0">Framework</div>
+              </div>
+
+              <div class="flex justify-between flex-wrap lg:block">
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/bootstrap.png" alt="Bootstrap" />
+                  <div class="text-lg md:text-2xl ml-4">Bootstrap</div>
+                </div>
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/tailwind.png" alt="Tailwind" />
+                  <div class="text-lg md:text-2xl ml-4">Tailwind</div>
+                </div>
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/react-js.png" alt="React.js" />
+                  <div class="text-lg md:text-2xl ml-4">React.js</div>
+                </div>
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/redux.png" alt="Redux" />
+                  <div class="text-lg md:text-2xl ml-4">Redux</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col lg:items-center">
+              <div class="flex justify-center items-center w-full">
+                <div class="text-2xl text-primaryText border-b-2 border-highlighter w-fit mt-5 lg:mt-0">Tools</div>
+              </div>
+              <div class="flex justify-between flex-wrap lg:block">
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/git.png" alt="Git" />
+                  <div class="text-lg md:text-2xl ml-4">Git</div>
+                </div>
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/jenkins.png" alt="Jenkins" />
+                  <div class="text-lg md:text-2xl ml-4">Jenkins</div>
+                </div>
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/docker.png" alt="Docker" />
+                  <div class="text-lg md:text-2xl ml-4">Docker</div>
+                </div>
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/kibana.png" alt="Kibana" />
+                  <div class="text-lg md:text-2xl ml-4">Kibana</div>
+                </div>
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/jira.png" alt="jira" />
+                  <div class="text-lg md:text-2xl ml-4">jira</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col lg:items-center">
+              <div class="flex justify-center items-center w-full">
+                <div class="text-2xl text-primaryText border-b-2 border-highlighter w-fit mt-5 lg:mt-0">Basic</div>
+              </div>
+              <div class="flex justify-between flex-wrap lg:block">
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/html.png" alt="HTML" />
+                  <div class="text-lg md:text-2xl ml-4">HTML</div>
+                </div>
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/css.png" alt="css" />
+                  <div class="text-lg md:text-2xl ml-4">Css/Scss</div>
+                </div>
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/javascript.png" alt="JavaScript" />
+                  <div class="text-lg md:text-2xl ml-4">JavaScript</div>
+                </div>
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/typescript.png" alt="TypeScript" />
+                  <div class="text-lg md:text-2xl ml-4">TypeScript</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col lg:items-center">
+              <div class="flex justify-center items-center w-full">
+                <div class="text-2xl text-primaryText border-b-2 border-highlighter w-fit mt-5 lg:mt-0">Design</div>
+              </div>
+              <div class="flex justify-between flex-wrap lg:block">
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/figma.png" alt="Figma" />
+                  <div class="text-lg md:text-2xl ml-4">Figma</div>
+                </div>
+                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/photoshop.png" alt="Photoshop" />
+                  <div class="text-lg md:text-2xl ml-4">Photoshop</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resume Section -->
+      <section id="resume" class="py-16">
+        <div class="max-w-screen-xl mx-6 xl:m-auto">
+          <div class="mx-auto w-fit">
+            <div class="font-dancing font-bold text-sm text-highlighter mb-1">MY CAREER SO FAR,</div>
+            <div class="text-5xl text-primaryText border-b-2 border-highlighter w-fit">Resume</div>
+          </div>
+          <div class="lg:flex justify-between gap-10 mt-10">
+            <div class="lg:w-1/2">
+              <div class="flex justify-center lg:justify-start items-center w-full">
+                <div class="text-2xl text-primaryText border-b-2 border-highlighter w-fit">Professional Experience</div>
+              </div>
+              <div class="flex justify-between flex-wrap lg:block">
+                <div class="relative text-primaryText h-fit w-full p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="mr-4" src="./images/resume/bold.png" alt="BOLD" />
+                  <div class="flex h-10 mt-2">
+                    <div class="mr-4 flex items-center">Software Engineer</div>
+                    <div class="pl-4 font-dancing border-l-2 border-highlighter flex items-center">September 2019 - February 2020</div>
+                  </div>
+                  <ul class="text-sm list-disc pl-6 space-y-2 mt-5 mb-1">
+                    <li>Developed and implemented engaging user interfaces for the Resume-Now builder platform.</li>
+                    <li>Collaborated with designers and backend engineers to implement design as functional frontend components.</li>
+                    <li>Created and implemented various frontend features, enhancing the platform.</li>
+                    <li>Enhanced load times and elevated user experience by optimising frontend code and resolving production issues.</li>
                   </ul>
                 </div>
               </div>
-              <div class="other-skills">
-                <div class="skill-title">
-                  <i class="fa-solid fa-terminal icon"></i>
-                  <span class="name">Other Skills</span>
-                </div>
-                <div class="skill-list list row">
-                  <div class="col-md-4 skill-box">
-                    <div class="box-content">
-                      <i class="fa-brands fa-sass" style="color: #c76494"></i>
-                      <h3>SCSS</h3>
-                    </div>
+
+              <div class="flex justify-between flex-wrap lg:block">
+                <div class="relative text-primaryText h-fit w-full p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="mr-4" src="./images/resume/agiliad.png" alt="Agiliad" />
+                  <div class="flex h-10 mt-2">
+                    <div class="mr-4 flex items-center">Senior Software Engineer</div>
+                    <div class="pl-4 font-dancing border-l-2 border-highlighter flex items-center">August 2021 - January 2024</div>
                   </div>
-                  <div class="col-md-4 skill-box">
-                    <div class="box-content">
-                      <i class="fa-brands fa-less" style="color: #5de8d3"></i>
-                      <h3>LESS</h3>
-                    </div>
-                  </div>
-                  <div class="col-md-4 skill-box">
-                    <div class="box-content">
-                      <i
-                        class="fa-brands fa-bootstrap"
-                        style="color: #7910f2"
-                      ></i>
-                      <h3>Bootstrap</h3>
-                    </div>
-                  </div>
-                  <div class="col-md-4 skill-box">
-                    <div class="box-content">
-                      <img src="./images/redux.png" alt="redux logo" />
-                      <h3>Redux</h3>
-                    </div>
-                  </div>
-                  <div class="col-md-4 skill-box">
-                    <div class="box-content">
-                      <img
-                        src="./images/redux-saga.png"
-                        style="width: 54px; height: 32px"
-                        alt="redux logo"
-                      />
-                      <h3>Redux-Saga</h3>
-                    </div>
-                  </div>
-                  <div class="col-md-4 skill-box">
-                    <div class="box-content">
-                      <img src="./images/express-js.png" alt="redux logo" />
-                      <h3>Express JS</h3>
-                    </div>
-                  </div>
-                  <div class="col-md-4 skill-box">
-                    <div class="box-content">
-                      <img src="./images/my-sql.png" alt="redux logo" />
-                      <h3>My SQL</h3>
-                    </div>
-                  </div>
+                  <ul class="text-sm list-disc pl-6 space-y-2 mt-5 mb-1">
+                    <li>Created a multilingual chatbot to enhance user experience.</li>
+                    <li>Assisted in the development of proof-of-concepts (POCs) for proposed features from the Product team.</li>
+                    <li>Collaborated with various teams to streamline and expedite product releases.</li>
+                    <li>Assisted in the expansion of Organisation by interviewing 50+ potential candidates skilled in React.js and Node.js.</li>
+                    <li>Successfully facilitated the transition of four teams by providing training and knowledge transfer sessions.</li>
+                  </ul>
                 </div>
               </div>
-              <div class="knowledge">
-                <div class="skill-title">
-                  <i class="fa-solid fa-wand-magic-sparkles icon"></i>
-                  <span class="name">Knowledge About</span>
+
+              <div class="flex justify-between flex-wrap lg:block">
+                <div class="relative text-primaryText h-fit w-full p-4 mt-6">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <img class="mr-4" src="./images/resume/agiliad.png" alt="Agiliad" />
+                  <div class="flex h-10 mt-2">
+                    <div class="mr-4 flex items-center">Software Engineer</div>
+                    <div class="pl-4 font-dancing border-l-2 border-highlighter flex items-center">March 2020 - August 2021</div>
+                  </div>
+                  <ul class="text-sm list-disc pl-6 space-y-2 mt-5 mb-1">
+                    <li>Assisted in the development of a single-page application utilising the React Framework.</li>
+                    <li>Collaborated with the UX team to design a visually appealing user interface.</li>
+                    <li>Addressed customer issues by maintaining production code and offering immediate hotfix solutions.</li>
+                  </ul>
                 </div>
-                <div class="skill-list list row">
-                  <ul>
-                    <li>
-                      <div class="name">Express Js, JWT, Mongoose</div>
-                    </li>
-                    <li>
-                      <div class="name">
-                        Visual Studio, Eclipse, IntelliJ Idea
+              </div>
+            </div>
+            <div class="lg:w-1/2">
+              <div class="lg:flex lg:justify-end mt-10 lg:mt-0">
+                <div class="w-full lg:w-5/6">
+                  <div class="flex justify-center lg:justify-start items-center w-full">
+                    <div class="text-2xl text-primaryText border-b-2 border-highlighter w-fit">Education</div>
+                  </div>
+                  <div>
+                    <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto">
+                      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                      <div class="flex">
+                        <img class="mr-4" src="./images/resume/cdac.png" alt="CDAC" />
+                        <div class="pl-4 font-dancing border-l-2 border-highlighter flex items-center">September 2019 - February 2020</div>
                       </div>
-                    </li>
-                    <li>
-                      <div class="name">Linux, Windows</div>
-                    </li>
-                    <li>
-                      <div class="name">Git, Jenkins, Jira, Rally</div>
-                    </li>
-                    <li>
-                      <div class="name">Kibana, Grafana, Docker</div>
-                    </li>
-                    <li>
-                      <div class="name">
-                        Google Dialogflow, Conversational AI
+                      <div class="mt-4 text-lg">PG diploma in Advance computing</div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto">
+                      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                      <div class="flex">
+                        <img class="mr-4" src="./images/resume/aktu.png" alt="CDAC" />
+                        <div class="pl-4 font-dancing border-l-2 border-highlighter flex items-center">July 2014 - May 2018</div>
                       </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!------------Resume Layout ------------>
-
-      <section class="card-right" id="resume-card">
-        <div class="card-wrapper">
-          <div class="section resume-card">
-            <div class="title-top">Resume</div>
-            <p class="title-bottom">My Career so far...</p>
-            <div class="block">
-              <div class="title">Experience</div>
-              <div class="row">
-                <div class="col-md-3">
-                  <table class="duration">
-                    <tr class="superscript">
-                      <td>Aug</td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr class="year">
-                      <td>2021</td>
-                      <td class="dash">-</td>
-                      <td>Present</td>
-                    </tr>
-                  </table>
-                </div>
-                <div class="col-md-9 content">
-                  <div class="position">Senior Software Engineer</div>
-                  <div class="location">
-                    <em>Agiliad Technologies Pvt. Ltd.</em>
+                      <div class="mt-4 text-lg">B.Tech Computer Science</div>
+                    </div>
                   </div>
-                  <ul class="roles">
-                    <li class="role-item">
-                      Involved in developing end to end part of chat bot using
-                      micro-service architecture.
-                    </li>
-                    <li class="role-item">
-                      Monitored and maintained application using tools like
-                      Kibana and Grafana
-                    </li>
-                    <li class="role-item">
-                      Experience with Google Dialogflow and conversational AI
-                    </li>
-                  </ul>
-                  <ul class="skill">
-                    <li><div class="skill-item">React.js</div></li>
-                    <li><div class="skill-item">Redux</div></li>
-                    <li><div class="skill-item">Node.js</div></li>
-                    <li><div class="skill-item">Mongo DB</div></li>
-                    <li><div class="skill-item">Micro Services</div></li>
-                    <li><div class="skill-item">Docker</div></li>
-                    <li><div class="skill-item">Kibana</div></li>
-                    <li><div class="skill-item">Dialogflow</div></li>
-                  </ul>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <table class="duration">
-                    <tr class="superscript">
-                      <td>Mar</td>
-                      <td></td>
-                      <td>Aug</td>
-                    </tr>
-                    <tr class="year">
-                      <td>2020</td>
-                      <td class="dash">-</td>
-                      <td>2021</td>
-                    </tr>
-                  </table>
-                </div>
-                <div class="col-md-9 content">
-                  <div class="position">Software Engineer</div>
-                  <div class="location">
-                    <em>Agiliad Technologies Pvt. Ltd.</em>
+              <div class="lg:flex lg:justify-end mt-10">
+                <div class="w-full lg:w-5/6">
+                  <div class="flex justify-center lg:justify-start items-center w-full">
+                    <div class="text-2xl text-primaryText border-b-2 border-highlighter w-fit">Awards & Certificates</div>
                   </div>
 
-                  <ul class="roles">
-                    <li class="role-item">
-                      Involved in developing Single page application using React
-                      Framework.
-                    </li>
-                    <li class="role-item">
-                      Worked with the UX team to develop attracted UI.
-                    </li>
-                    <li class="role-item">
-                      Maintained production code and provided hotfix for the
-                      issues faced by customers.
-                    </li>
-                  </ul>
-
-                  <ul class="skill">
-                    <li><div class="skill-item">React.js</div></li>
-                    <li><div class="skill-item">Redux</div></li>
-                    <li><div class="skill-item">Redux-Saga</div></li>
-                    <li><div class="skill-item">SCSS</div></li>
-                    <li><div class="skill-item">Jest</div></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="block">
-              <div class="title">Education</div>
-              <div class="row">
-                <div class="col-md-3">
-                  <table class="duration">
-                    <tr>
-                      <td class="superscript">Sept</td>
-                      <td></td>
-                      <td class="superscript">Feb</td>
-                    </tr>
-                    <tr class="year">
-                      <td>2019</td>
-                      <td class="dash">-</td>
-                      <td>2020</td>
-                    </tr>
-                  </table>
-                </div>
-                <div class="col-md-9 content">
-                  <div class="position">
-                    Post Graduation diploma in Advance computing.
+                  <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                    <div class="flex items-center">
+                      <img class="mr-4 h-[18px]" src="./images/resume/agiliad.png" alt="Agiliad" />
+                      <div class="pl-4 font-dancing border-l-2 border-highlighter flex items-center">January 2022</div>
+                    </div>
+                    <div class="mt-4 text-lg">The Code Phoenix Award</div>
                   </div>
-                  <div class="location"><em>CDAC, Noida</em></div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <table class="duration">
-                    <tr>
-                      <td class="superscript">July</td>
-                      <td></td>
-                      <td class="superscript">May</td>
-                    </tr>
-                    <tr class="year">
-                      <td>2014</td>
-                      <td class="dash">-</td>
-                      <td>2018</td>
-                    </tr>
-                  </table>
-                </div>
-                <div class="col-md-9 content">
-                  <div class="position">B.Tech Computer Science</div>
-                  <div class="location">
-                    <em>Dr. APJ Abdul Kalam Technical University</em>
+                  <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                    <div class="flex items-center">
+                      <img class="mr-4 h-[18px]" src="./images/resume/agiliad.png" alt="Agiliad" />
+                      <div class="pl-4 font-dancing border-l-2 border-highlighter flex items-center">January 2022</div>
+                    </div>
+                    <div class="mt-4 text-lg">The Top Squad Award</div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="block">
-              <div class="title">Awards & Achievements</div>
-              <div class="row">
-                <div class="col-md-3">
-                  <table class="duration">
-                    <tr>
-                      <td class="superscript">Jan</td>
-                    </tr>
-                    <tr class="year">
-                      <td>2022</td>
-                    </tr>
-                  </table>
-                </div>
-                <div class="col-md-9 content">
-                  <div class="position">The Code Phoenix Award</div>
-                  <div class="location">
-                    <em>Agiliad Technologies Pvt. Ltd.</em>
+                  <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                    <div class="flex items-center">
+                      <img class="mr-4 h-[18px]" src="./images/resume/agiliad.png" alt="Agiliad" />
+                      <div class="pl-4 font-dancing border-l-2 border-highlighter flex items-center">January 2022</div>
+                    </div>
+                    <div class="mt-4 text-lg">The Complete 2021 Web Development Bootcamp</div>
                   </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <table class="duration">
-                    <tr>
-                      <td class="superscript">Jan</td>
-                    </tr>
-                    <tr class="year">
-                      <td>2022</td>
-                    </tr>
-                  </table>
-                </div>
-                <div class="col-md-9 content">
-                  <div class="position">The Top Squad Award</div>
-                  <div class="location">
-                    <em>Agiliad Technologies Pvt. Ltd.</em>
+                  <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                    <div class="flex items-center">
+                      <img class="mr-4 h-[18px]" src="./images/resume/agiliad.png" alt="Agiliad" />
+                      <div class="pl-4 font-dancing border-l-2 border-highlighter flex items-center">January 2022</div>
+                    </div>
+                    <div class="mt-4 text-lg">React - The Complete Guide (incl Hooks, Redux)</div>
                   </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <table class="duration">
-                    <tr>
-                      <td class="superscript">Jun</td>
-                    </tr>
-                    <tr class="year">
-                      <td>2021</td>
-                    </tr>
-                  </table>
-                </div>
-                <div class="col-md-9 content">
-                  <div class="position">
-                    The Complete 2021 Web Develpment Bootcamp
-                  </div>
-                  <div class="location">
-                    <em>Udemy</em>
-                  </div>
-                  <ul class="roles">
-                    <li class="role-item">
-                      <a
-                        href="https://www.udemy.com/certificate/UC-73700355-7a56-4350-bf6c-640100a8c21d/"
-                        target="_blank"
-                        >View Certificate</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <table class="duration">
-                    <tr>
-                      <td class="superscript">Mar</td>
-                    </tr>
-                    <tr class="year">
-                      <td>2021</td>
-                    </tr>
-                  </table>
-                </div>
-                <div class="col-md-9 content">
-                  <div class="position">React-The Complete Guide</div>
-                  <div class="location"><em>Udemy</em></div>
-                  <ul class="roles">
-                    <li class="role-item">
-                      <a
-                        href="https://www.udemy.com/certificate/UC-d6a0ba8f-e410-44fc-8a73-95dbfe74a5e6/"
-                        target="_blank"
-                        >View Certificate</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <table class="duration">
-                    <tr>
-                      <td class="superscript">Dec</td>
-                    </tr>
-                    <tr class="year">
-                      <td>2020</td>
-                    </tr>
-                  </table>
-                </div>
-                <div class="col-md-9 content">
-                  <div class="position">Exceptional Greenhorn Award</div>
-                  <div class="location">
-                    <em>Agiliad Technologies Pvt. Ltd.</em>
+                  <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                    <div class="flex items-center">
+                      <img class="mr-4 h-[18px]" src="./images/resume/agiliad.png" alt="Agiliad" />
+                      <div class="pl-4 font-dancing border-l-2 border-highlighter flex items-center">December 2020</div>
+                    </div>
+                    <div class="mt-4 text-lg">Exceptional Greenhorn Award</div>
                   </div>
                 </div>
               </div>
@@ -609,92 +448,51 @@
         </div>
       </section>
 
-      <!------------Contact Layout ------------>
+      <!-- Contact Section -->
+      <section id="contact" class="py-16">
+        <div class="max-w-screen-xl mx-6 xl:m-auto">
+          <div class="mx-auto w-fit">
+            <div class="font-dancing font-bold text-sm text-highlighter mb-1">Collaborate with Me,</div>
+            <div class="text-5xl text-primaryText border-b-2 border-highlighter w-fit">Contact</div>
+          </div>
 
-      <section class="card-right" id="contacts-card">
-        <div class="card-wrapper">
-          <div class="section contact-card">
-            <div class="title-top">wanna chat with me ?</div>
-            <p class="title-bottom">Contact Me</p>
-            <div class="row">
-              <div class="col-md-6 d-flex align-items-stretch">
-                <div class="info-box">
-                  <i class="fa-solid fa-envelope"></i>
-                  <h3>Email Me</h3>
-                  <p>ankitrajput1902@gmail.com</p>
-                </div>
-              </div>
-              <div class="col-md-6 d-flex align-items-stretch">
-                <div class="info-box">
-                  <i class="fa-solid fa-phone-volume"></i>
-                  <h3>Call Me</h3>
-                  <p>+91 7503911569</p>
-                </div>
-              </div>
+          <div class="mt-10 text-base md:text-xl text-center max-w-[650px] mx-auto">
+            What’s next? Feel free to reach out to me if you are looking for a developer, have a query, or simply want to connect.
+          </div>
+          <div class="text-xl md:text-3xl lg:text-4xl text-center mx-auto mt-16">
+            <i class="fa-regular fa-envelope"></i>
+            <span class="mx-2">ankitrajput1902@gmail.com</span>
+            <i class="fa-regular fa-copy"></i>
+          </div>
+          <div class="text-xl md:text-3xl lg:text-4xl text-center mx-auto mt-8">
+            <i class="fa-regular fa-envelope"></i>
+            <span class="mx-2">+91-7503911569</span>
+            <i class="fa-regular fa-copy"></i>
+          </div>
+          <div class="text-center mx-auto mt-16">You may also find me on these platforms!</div>
+          <div class="flex mt-5 gap-5 mx-auto w-fit">
+            <div class="relative hover:text-highlighter hover:cursor-pointer flex w-10 h-10 justify-center items-center">
+              <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+              <i class="fa-brands fa-meta"></i>
             </div>
-            <form
-              action="mailto:ankitrajput1902@gmail.com"
-              method="post"
-              enctype="text/plain"
-              class="form"
-            >
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input
-                    type="text"
-                    name="name"
-                    class="form-control"
-                    id="name"
-                    placeholder="Your Name"
-                    required=""
-                  />
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input
-                    type="email"
-                    class="form-control"
-                    name="email"
-                    id="email"
-                    placeholder="Your Email"
-                    required=""
-                  />
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="subject"
-                  id="subject"
-                  placeholder="Subject"
-                  required=""
-                />
-              </div>
-              <div class="form-group mt-3">
-                <textarea
-                  class="form-control"
-                  name="message"
-                  rows="5"
-                  placeholder="Message"
-                  required=""
-                ></textarea>
-              </div>
-              <div class="text-center">
-                <button type="submit" value="Send">Send Message</button>
-              </div>
-            </form>
+            <div class="relative hover:text-highlighter hover:cursor-pointer flex w-10 h-10 justify-center items-center">
+              <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+              <i class="fa-brands fa-github"></i>
+            </div>
+            <div class="relative hover:text-highlighter hover:cursor-pointer flex w-10 h-10 justify-center items-center">
+              <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+              <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+            <div class="relative hover:text-highlighter hover:cursor-pointer flex w-10 h-10 justify-center items-center">
+              <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+              <i class="fa-brands fa-instagram"></i>
+            </div>
           </div>
         </div>
       </section>
     </div>
 
     <!------------ Scripts ------------>
-    <script src="./scripts/jquery.min.js"></script>
-    <script src="./scripts/jquery.slimscroll.js"></script>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"
-    ></script>
     <script src="scripts/main.js"></script>
   </body>
 </html>
