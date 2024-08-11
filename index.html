@@ -111,7 +111,7 @@
 
       <!-- About Section -->
       <section id="about" class="py-16">
-        <div class="max-w-screen-xl mx-6 xl:m-auto">
+        <div class="max-w-screen-xl mx-6 xl:mx-auto">
           <div class="mx-auto w-fit">
             <div class="font-dancing font-bold text-sm text-highlighter mb-1">A GLIMPSE INTO MY WORLD,</div>
             <div class="text-5xl text-primaryText border-b-2 border-highlighter w-fit">About Me</div>
@@ -163,7 +163,7 @@
 
       <!-- Skills Section -->
       <section id="skills" class="pt-16 pb-24">
-        <div class="max-w-screen-xl mx-6 xl:m-auto">
+        <div class="max-w-screen-xl mx-6 xl:mx-auto">
           <div class="mx-auto w-fit">
             <div class="font-dancing font-bold text-sm text-highlighter mb-1">WHAT I BRING TO THE TABLE,</div>
             <div class="text-5xl text-primaryText border-b-2 border-highlighter w-fit leading-tight">My Skills</div>
@@ -306,7 +306,7 @@
 
       <!-- Resume Section -->
       <section id="resume" class="py-16">
-        <div class="max-w-screen-xl mx-6 xl:m-auto">
+        <div class="max-w-screen-xl mx-6 xl:mx-auto">
           <div class="mx-auto w-fit">
             <div class="font-dancing font-bold text-sm text-highlighter mb-1">MY CAREER SO FAR,</div>
             <div class="text-5xl text-primaryText border-b-2 border-highlighter w-fit">Resume</div>
@@ -450,7 +450,7 @@
 
       <!-- Contact Section -->
       <section id="contact" class="py-16">
-        <div class="max-w-screen-xl mx-6 xl:m-auto">
+        <div class="max-w-screen-xl mx-6 xl:mx-auto">
           <div class="mx-auto w-fit">
             <div class="font-dancing font-bold text-sm text-highlighter mb-1">Collaborate with Me,</div>
             <div class="text-5xl text-primaryText border-b-2 border-highlighter w-fit">Contact</div>
@@ -461,13 +461,27 @@
           </div>
           <div class="text-xl md:text-3xl lg:text-4xl text-center mx-auto mt-16">
             <i class="fa-regular fa-envelope"></i>
-            <span class="mx-2">ankitrajput1902@gmail.com</span>
-            <i class="fa-regular fa-copy"></i>
+            <span id="email" class="mx-2">ankitrajput1902@gmail.com</span>
+            <i class="relative fa-regular fa-copy hover:text-highlighter hover:cursor-pointer" title="Copied." onclick="copyContent('email')">
+              <div id="email-tooltip" class="hidden font-sans absolute top-[-8px] left-[-16px] md:left-0 z-50 text-sm w-max -translate-x-1/2 -translate-y-full text-primaryText">
+                <div class="relative flex justify-center items-center p-1">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  Copied to clipboard!
+                </div>
+              </div>
+            </i>
           </div>
           <div class="text-xl md:text-3xl lg:text-4xl text-center mx-auto mt-8">
-            <i class="fa-regular fa-envelope"></i>
-            <span class="mx-2">+91-7503911569</span>
-            <i class="fa-regular fa-copy"></i>
+            <i class="fa-solid fa-phone"></i>
+            <span id="phone" class="mx-2">+91 7503911569</span>
+            <i class="relative fa-regular fa-copy hover:text-highlighter hover:cursor-pointer" onclick="copyContent('phone')">
+              <div id="phone-tooltip" class="hidden font-sans absolute top-[-8px] left-1/2 z-50 text-sm w-max -translate-x-1/2 -translate-y-full text-primaryText">
+                <div class="relative flex justify-center items-center p-1">
+                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  Copied to clipboard!
+                </div>
+              </div>
+            </i>
           </div>
           <div class="text-center mx-auto mt-16">You may also find me on these platforms!</div>
           <div class="flex mt-5 gap-5 mx-auto w-fit">
@@ -490,6 +504,15 @@
           </div>
         </div>
       </section>
+
+      <!-- Footer Section -->
+      <footer class="py-8">
+        <div class="max-w-screen-xl mx-6 lg:mx-auto">
+          <div class="mx-auto w-fit text-xs md:text-sm lg:text-base">
+            Copyright @ 2024 | <span class="underline text-highlighter">Designed</span> and <span class="underline text-highlighter">Developed</span> by Ankit Rajput
+          </div>
+        </div>
+      </footer>
     </div>
 
     <!------------ Scripts ------------>

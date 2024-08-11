@@ -86,6 +86,21 @@ function scrollToSection(event) {
   });
 }
 
+const copyContent = async (element) => {
+  let text = document.getElementById(element);
+  let tooltip = document.getElementById(element == "email" ? "email-tooltip" : "phone-tooltip");
+  try {
+    await navigator.clipboard.writeText(text);
+    tooltip.classList.remove("hidden");
+
+    setTimeout(() => {
+      tooltip.classList.add("hidden");
+    }, 1000);
+  } catch (err) {
+    console.error("Failed to copy: ", err);
+  }
+};
+
 window.onload = function () {
   navLinks.forEach(function (link) {
     link.addEventListener("click", scrollToSection);
