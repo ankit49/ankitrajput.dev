@@ -55,9 +55,11 @@ function updateActiveSection() {
   });
 
   navLinks.forEach((link) => {
-    link.classList.remove("text-highlighter", "border-b-2", "border-highlighter");
+    link.classList.remove("after:scale-x-100", "text-highlighter");
+    link.classList.add("after:scale-x-0");
     if (link.classList.contains(activeSection)) {
-      link.classList.add("text-highlighter", "border-b-2", "border-highlighter");
+      link.classList.add("after:scale-x-100", "text-highlighter");
+      link.classList.remove("after:scale-x-0");
     }
   });
 }

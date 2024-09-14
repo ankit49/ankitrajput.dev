@@ -10,35 +10,55 @@
     <!------------ Fonts ------------>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap" rel="stylesheet" />
     <!------------ Css ------------>
     <link rel="stylesheet" href="./styles/output.css" />
   </head>
-  <body class="text-secondaryText">
+  <body class="text-secondaryText relative">
     <!-- Navbar -->
-    <header class="fixed top-0 bg-secondaryBg w-full z-50">
-      <div class="max-w-screen-xl mx-6 xl:m-auto flex justify-between items-center py-5">
-        <div class="font-bold text-3xl leading-9 text-primaryText">&lt; AR /&gt;</div>
-        <nav id="desktopNav" class="navbar hidden lg:flex gap-7">
-          <a class="home font-semibold text-highlighter border-b-2 border-highlighter" href="#home">Home</a>
-          <a class="about font-semibold" href="#about">About</a>
-          <a class="skills font-semibold" href="#skills">Skills</a>
-          <a class="resume font-semibold" href="#resume">Resume</a>
-          <a class="contact font-semibold" href="#contact">Contact</a>
+    <header class="max-w-screen-xl mx-auto px-6 fixed w-full bg-secondaryBg 2xl:top-[50px] left-[50%] translate-x-[-50%] rounded-[8px] z-50">
+      <div class="flex justify-between items-center py-5">
+        <div class="font-bold text-4xl leading-9 text-primaryText">&lt; AR /&gt;</div>
+        <nav id="desktopNav" class="navbar hidden lg:flex gap-7 text-xl">
+          <a
+            class="home font-semibold text-highlighter border-highlighter relative block after:block after:content-[''] after:absolute after:h-[3px] after:bg-highlighter after:w-full after:scale-x-100 after:hover:scale-x-100 after:transition after:duration-200 after:origin-left"
+            href="#home"
+            >HOME</a
+          >
+          <a
+            class="about font-semibold border-highlighter relative block after:block after:content-[''] after:absolute after:h-[3px] after:bg-highlighter after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-200 after:origin-left"
+            href="#about"
+            >ABOUT</a
+          >
+          <a
+            class="skills font-semibold border-highlighter relative block after:block after:content-[''] after:absolute after:h-[3px] after:bg-highlighter after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-200 after:origin-left"
+            href="#skills"
+            >SKILLS</a
+          >
+          <a
+            class="resume font-semibold border-highlighter relative block after:block after:content-[''] after:absolute after:h-[3px] after:bg-highlighter after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-200 after:origin-left"
+            href="#resume"
+            >RESUME</a
+          >
+          <a
+            class="contact font-semibold border-highlighter relative block after:block after:content-[''] after:absolute after:h-[3px] after:bg-highlighter after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-200 after:origin-left"
+            href="#contact"
+            >CONTACT</a
+          >
         </nav>
         <div class="flex gap-6">
-          <div onclick="switchMode()" class="relative hover:cursor-pointer flex w-10 h-10 justify-center items-center">
-            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+          <div onclick="switchMode()" class="w-10 h-10 flex justify-center items-center border-2 border-primaryText hover:border-highlighter rounded-md cursor-pointer">
             <i class="fa-solid fa-lightbulb"></i>
           </div>
-          <a href="./resume/Ankit_Rajput.pdf" attributes-list download>
-            <div class="relative hover:text-highlighter hover:cursor-pointer hidden lg:flex justify-center items-center gap-2 h-10 px-3">
-              <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
-              <i class="fa-solid fa-download"></i>Download Resume
-            </div>
+          <a
+            href="./resume/Ankit_Rajput.pdf"
+            attributes-list
+            download
+            class="h-10 hidden lg:flex justify-center items-center gap-2 px-3 py-2 border-2 border-primaryText hover:border-highlighter hover:text-highlighter rounded-md cursor-pointer">
+            <i class="fa-solid fa-download"></i>Download Resume
           </a>
           <div onclick="toggleMobileNav()" class="relative hover:text-highlighter hover:cursor-pointer flex lg:hidden w-10 h-10 justify-center items-center">
-            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
             <i id="mobileNavToggler" class="fa-solid fa-bars"></i>
           </div>
         </div>
@@ -56,59 +76,64 @@
           <a class="contact font-semibold" href="#contact">Contact</a>
         </nav>
         <div class="w-fit">
-          <a href="./resume/Ankit_Rajput.pdf" attributes-list download>
-            <div class="relative hover:text-highlighter hover:cursor-pointer flex justify-center items-center gap-2 h-10 px-3">
-              <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
-              <i class="fa-solid fa-download"></i>Download Resume
-            </div>
+          <a
+            href="./resume/Ankit_Rajput.pdf"
+            attributes-list
+            download
+            class="flex justify-center items-center gap-2 h-10 px-3 border-2 border-primaryText hover:border-highlighter hover:text-highlighter rounded-md cursor-pointer">
+            <i class="fa-solid fa-download"></i>Download Resume
           </a>
         </div>
       </div>
     </div>
 
-    <div class="w-full mt-20 bg-primaryBg">
+    <div class="w-full bg-primaryBg">
       <!-- Hero Section -->
-      <section id="home" class="h-[calc(100vh-80px)]">
-        <div class="max-w-screen-xl mx-6 xl:m-auto flex items-center justify-center">
+      <section id="home" class="h-[calc(100vh-80px)] 2xl:h-[100vh]">
+        <div class="max-w-screen-xl px-6 m-auto flex items-center justify-center">
           <div class="w-full flex flex-col h-[calc(100vh-80px)] md:flex-row justify-center md:justify-between items-center">
-            <div class="mt-10">
-              <div class="font-semibold text-6xl text-primaryText">Hi, I'm <span class="text-highlighter block lg:inline-block mt-5 lg:mt-0">Ankit Rajput</span></div>
-              <div class="mt-5 lg:mt-3 font-semibold text-2xl md:text-3xl lg:text-4xl">MERN Stack Developer</div>
-              <a href="./resume/Ankit_Rajput.pdf" attributes-list download>
-                <div class="relative hover:text-highlighter hover:cursor-pointer flex justify-center items-center gap-3 h-10 px-3 w-fit mt-8">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+            <div class="mt-10 h-[70%] 2xl:h-[50%] flex flex-col justify-between">
+              <div>
+                <div class="font-semibold text-6xl text-primaryText">Hi, I'm <span class="text-highlighter block lg:inline-block mt-5 lg:mt-0">Ankit Rajput</span></div>
+                <div class="mt-6 font-semibold text-2xl md:text-3xl lg:text-4xl">MERN Stack Developer</div>
+                <a
+                  href="./resume/Ankit_Rajput.pdf"
+                  attributes-list
+                  download
+                  class="flex justify-center items-center gap-3 h-10 px-3 w-fit mt-8 border-2 border-primaryText hover:border-highlighter hover:text-highlighter rounded-md cursor-pointer">
                   <i class="fa-solid fa-download"></i>Download Resume
-                </div>
-              </a>
-              <div class="mt-[150px] lg:mt-[200px]">
+                </a>
+              </div>
+
+              <div class="">
                 <div class="text-sm uppercase">find me on</div>
                 <div class="flex mt-4 gap-5">
-                  <a href="https://www.facebook.com/ankitrajput.delhi" target="_blank">
-                    <div class="relative hover:text-highlighter hover:cursor-pointer flex w-10 h-10 justify-center items-center">
-                      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
-                      <i class="fa-brands fa-meta"></i>
-                    </div>
+                  <a
+                    href="https://www.facebook.com/ankitrajput.delhi"
+                    target="_blank"
+                    class="h-10 w-10 flex justify-center items-center border-2 border-primaryText hover:border-highlighter hover:text-highlighter rounded-md cursor-pointer">
+                    <i class="fa-brands fa-meta"></i>
                   </a>
 
-                  <a href="https://github.com/ankit49" target="_blank">
-                    <div class="relative hover:text-highlighter hover:cursor-pointer flex w-10 h-10 justify-center items-center">
-                      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
-                      <i class="fa-brands fa-github"></i>
-                    </div>
+                  <a
+                    href="https://github.com/ankit49"
+                    target="_blank"
+                    class="h-10 w-10 flex justify-center items-center border-2 border-primaryText hover:border-highlighter hover:text-highlighter rounded-md cursor-pointer">
+                    <i class="fa-brands fa-github"></i>
                   </a>
 
-                  <a href="https://www.linkedin.com/in/ankit49/" target="_blank">
-                    <div class="relative hover:text-highlighter hover:cursor-pointer flex w-10 h-10 justify-center items-center">
-                      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
-                      <i class="fa-brands fa-linkedin-in"></i>
-                    </div>
+                  <a
+                    href="https://www.linkedin.com/in/ankit49/"
+                    target="_blank"
+                    class="h-10 w-10 flex justify-center items-center border-2 border-primaryText hover:border-highlighter hover:text-highlighter rounded-md cursor-pointer">
+                    <i class="fa-brands fa-linkedin-in"></i>
                   </a>
 
-                  <a href="https://www.instagram.com/rajput__ankit" target="_blank">
-                    <div class="relative hover:text-highlighter hover:cursor-pointer flex w-10 h-10 justify-center items-center">
-                      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
-                      <i class="fa-brands fa-instagram"></i>
-                    </div>
+                  <a
+                    href="https://www.instagram.com/rajput__ankit"
+                    target="_blank"
+                    class="h-10 w-10 flex justify-center items-center border-2 border-primaryText hover:border-highlighter hover:text-highlighter rounded-md cursor-pointer">
+                    <i class="fa-brands fa-instagram"></i>
                   </a>
                 </div>
               </div>
@@ -122,26 +147,24 @@
 
       <!-- About Section -->
       <section id="about" class="py-16">
-        <div class="max-w-screen-xl mx-6 xl:mx-auto">
+        <div class="max-w-screen-xl px-6 m-auto">
           <div class="mx-auto w-fit">
             <div class="font-dancing font-bold text-sm text-highlighter mb-1">A GLIMPSE INTO MY WORLD,</div>
             <div class="text-5xl text-primaryText border-b-2 border-highlighter w-fit">About Me</div>
           </div>
           <div class="mt-10 md:flex md:justify-between items-center">
-            <div class="my-10 lg:ml-10">
+            <div class="my-10 lg:ml-10 border-2 border-primaryText rounded-md bg-secondaryBg">
               <div class="relative flex justify-center items-center p-3 w-fit mx-auto">
-                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
                 <img class="w-[230px] lg:w-[350px]" src="./images/profile.jpg" alt="Ankit Rajput" />
               </div>
             </div>
             <div class="max-w-[400px] lg:max-w-[650px]">
-              <div class="font-medium leading-6 lg:leading-8 tracking-wider">
+              <div class="font-medium lg:text-lg leading-7 lg:leading-8 tracking-wider font-jetbrains">
                 I'm a full-stack developer with over 4.5 years of experience building robust MERN stack applications. My passion lies in crafting seamless user experiences from conception to
                 deployment.<span class="mt-2 block">Currently expanding my skillset to include web design, I'm excited to bring fresh perspectives to my projects.</span>
               </div>
               <div class="flex justify-between mt-10 lg:mt-28 flex-wrap">
-                <div class="relative text-highlighter hover:cursor-pointer lg:h-[130px] lg:w-[150px] p-2 md:p-4">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primary cursor-pointer lg:h-[130px] lg:w-[150px] p-2 md:p-4 border-2 border-primaryText hover:border-highlighter hover:text-highlighter rounded-xl">
                   <div class="lg:text-2xl"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                   <div class="mt-2 lg:mt-6 text-xs md:text-sm">
                     WEB <br />
@@ -149,8 +172,7 @@
                   </div>
                 </div>
 
-                <div class="relative text-highlighter hover:cursor-pointer lg:h-[130px] lg:w-[150px] p-2 md:p-4">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primary cursor-pointer lg:h-[130px] lg:w-[150px] p-2 md:p-4 border-2 border-primaryText hover:border-highlighter hover:text-highlighter rounded-xl">
                   <div class="lg:text-2xl"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                   <div class="mt-2 lg:mt-6 text-xs md:text-sm">
                     MERN-APP <br />
@@ -158,8 +180,7 @@
                   </div>
                 </div>
 
-                <div class="relative text-highlighter hover:cursor-pointer lg:h-[130px] lg:w-[150px] p-2 md:p-4">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primary cursor-pointer lg:h-[130px] lg:w-[150px] p-2 md:p-4 border-2 border-primaryText hover:border-highlighter hover:text-highlighter rounded-xl">
                   <div class="lg:text-2xl"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                   <div class="mt-2 lg:mt-6 text-xs md:text-sm">
                     RESPONSIVE <br />
@@ -174,7 +195,7 @@
 
       <!-- Skills Section -->
       <section id="skills" class="pt-16 pb-24">
-        <div class="max-w-screen-xl mx-6 xl:mx-auto">
+        <div class="max-w-screen-xl px-6 m-auto">
           <div class="mx-auto w-fit">
             <div class="font-dancing font-bold text-sm text-highlighter mb-1">WHAT I BRING TO THE TABLE,</div>
             <div class="text-5xl text-primaryText border-b-2 border-highlighter w-fit leading-tight">My Skills</div>
@@ -186,18 +207,15 @@
               </div>
 
               <div class="flex justify-between flex-wrap lg:block">
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/node-js.png" alt="Node.Js" />
                   <div class="text-lg md:text-2xl ml-4">Node.js</div>
                 </div>
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/express-js.png" alt="Express.Js" />
                   <div class="text-lg md:text-2xl ml-4">Express.js</div>
                 </div>
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[170px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/mongo-db.png" alt="Mongo DB" />
                   <div class="text-lg md:text-2xl ml-4">Mongo DB</div>
                 </div>
@@ -210,23 +228,19 @@
               </div>
 
               <div class="flex justify-between flex-wrap lg:block">
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[170px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/bootstrap.png" alt="Bootstrap" />
                   <div class="text-lg md:text-2xl ml-4">Bootstrap</div>
                 </div>
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[170px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/tailwind.png" alt="Tailwind" />
                   <div class="text-lg md:text-2xl ml-4">Tailwind</div>
                 </div>
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[170px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/react-js.png" alt="React.js" />
                   <div class="text-lg md:text-2xl ml-4">React.js</div>
                 </div>
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[170px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/redux.png" alt="Redux" />
                   <div class="text-lg md:text-2xl ml-4">Redux</div>
                 </div>
@@ -238,28 +252,23 @@
                 <div class="text-2xl text-primaryText border-b-2 border-highlighter w-fit mt-5 lg:mt-0">Tools</div>
               </div>
               <div class="flex justify-between flex-wrap lg:block">
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[170px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/git.png" alt="Git" />
                   <div class="text-lg md:text-2xl ml-4">Git</div>
                 </div>
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[170px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/jenkins.png" alt="Jenkins" />
                   <div class="text-lg md:text-2xl ml-4">Jenkins</div>
                 </div>
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[170px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/docker.png" alt="Docker" />
                   <div class="text-lg md:text-2xl ml-4">Docker</div>
                 </div>
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[170px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/kibana.png" alt="Kibana" />
                   <div class="text-lg md:text-2xl ml-4">Kibana</div>
                 </div>
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[170px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/jira.png" alt="jira" />
                   <div class="text-lg md:text-2xl ml-4">jira</div>
                 </div>
@@ -271,23 +280,19 @@
                 <div class="text-2xl text-primaryText border-b-2 border-highlighter w-fit mt-5 lg:mt-0">Basic</div>
               </div>
               <div class="flex justify-between flex-wrap lg:block">
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[170px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/html.png" alt="HTML" />
                   <div class="text-lg md:text-2xl ml-4">HTML</div>
                 </div>
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[170px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/css.png" alt="css" />
                   <div class="text-lg md:text-2xl ml-4">Css/Scss</div>
                 </div>
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[170px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/javascript.png" alt="JavaScript" />
                   <div class="text-lg md:text-2xl ml-4">JavaScript</div>
                 </div>
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[170px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/typescript.png" alt="TypeScript" />
                   <div class="text-lg md:text-2xl ml-4">TypeScript</div>
                 </div>
@@ -299,13 +304,11 @@
                 <div class="text-2xl text-primaryText border-b-2 border-highlighter w-fit mt-5 lg:mt-0">Design</div>
               </div>
               <div class="flex justify-between flex-wrap lg:block">
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[170px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/figma.png" alt="Figma" />
                   <div class="text-lg md:text-2xl ml-4">Figma</div>
                 </div>
-                <div class="relative text-primaryText hover:text-highlighter hover:cursor-pointer flex h-fit w-[165px] md:w-[210px] p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                <div class="text-primaryText border-2 border-primaryText cursor-pointer hover:border-highlighter hover:text-highlighter rounded-xl flex h-fit w-[170px] md:w-[210px] p-4 mt-6">
                   <img class="w-6 h-6 md:w-[32px] md:h-[32px]" src="./images/skills/photoshop.png" alt="Photoshop" />
                   <div class="text-lg md:text-2xl ml-4">Photoshop</div>
                 </div>
@@ -317,7 +320,7 @@
 
       <!-- Resume Section -->
       <section id="resume" class="py-16">
-        <div class="max-w-screen-xl mx-6 xl:mx-auto">
+        <div class="max-w-screen-xl px-6 m-auto">
           <div class="mx-auto w-fit">
             <div class="font-dancing font-bold text-sm text-highlighter mb-1">MY CAREER SO FAR,</div>
             <div class="text-5xl text-primaryText border-b-2 border-highlighter w-fit">Resume</div>
@@ -325,21 +328,21 @@
           <div class="lg:flex justify-between gap-10 mt-10">
             <div class="lg:w-1/2">
               <div class="flex justify-center lg:justify-start items-center w-full">
-                <div class="text-2xl text-primaryText border-b-2 border-highlighter w-fit">Professional Experience</div>
+                <div class="text-2xl text-primaryText border-b-2 border-highlighter w-fit mb-6">Professional Experience</div>
               </div>
-              <div class="flex justify-between flex-wrap lg:block">
-                <div class="relative text-primaryText h-fit w-full p-4 mt-6">
+              <div class="flex justify-between flex-wrap lg:block border-2 border-primaryText hover:border-highlighter rounded-xl mb-6">
+                <div class="relative text-primaryText h-fit w-full p-6">
                   <div class="absolute top-0 left-0 w-full h-full inset-0 bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl z-10"></div>
                   <div class="relative z-20">
-                    <a href="https://www.bold.com/" target="_blank" class="hover:cursor-pointer">
-                      <img class="mr-4" src="./images/resume/bold.png" alt="BOLD" />
-                    </a>
+                    <div class="flex">
+                      <a href="https://www.bold.com/" target="_blank" class="hover:cursor-pointer">
+                        <img class="mr-4" src="./images/resume/bold.png" alt="BOLD" />
+                      </a>
 
-                    <div class="flex h-10 mt-2">
-                      <div class="mr-4 flex items-center">Software Engineer</div>
                       <div class="pl-4 font-dancing border-l-2 border-highlighter flex items-center">September 2019 - February 2020</div>
                     </div>
-                    <ul class="text-sm list-disc pl-6 space-y-2 mt-5 mb-1">
+                    <div class="mt-3 flex items-center">Software Engineer</div>
+                    <ul class="text-md list-disc pl-6 space-y-2 mt-5 mb-1">
                       <li>Developed and implemented engaging user interfaces for the Resume-Now builder platform.</li>
                       <li>Collaborated with designers and backend engineers to implement design as functional frontend components.</li>
                       <li>Created and implemented various frontend features, enhancing the platform.</li>
@@ -349,19 +352,17 @@
                 </div>
               </div>
 
-              <div class="flex justify-between flex-wrap lg:block">
-                <div class="relative text-primaryText h-fit w-full p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl z-10"></div>
+              <div class="flex justify-between flex-wrap lg:block border-2 border-primaryText hover:border-highlighter rounded-xl mb-6">
+                <div class="relative text-primaryText h-fit w-full p-6">
                   <div class="relative z-20">
-                    <a href="https://agiliad.com/" target="_blank">
-                      <img class="mr-4" src="./images/resume/agiliad.png" alt="Agiliad" />
-                    </a>
-
-                    <div class="flex h-10 mt-2">
-                      <div class="mr-4 flex items-center">Senior Software Engineer</div>
+                    <div class="flex">
+                      <a href="https://agiliad.com/" target="_blank">
+                        <img class="mr-4" src="./images/resume/agiliad.png" alt="Agiliad" />
+                      </a>
                       <div class="pl-4 font-dancing border-l-2 border-highlighter flex items-center">August 2021 - January 2024</div>
                     </div>
-                    <ul class="text-sm list-disc pl-6 space-y-2 mt-5 mb-1">
+                    <div class="mt-3 flex items-center">Senior Software Engineer</div>
+                    <ul class="text-md list-disc pl-6 space-y-2 mt-5 mb-1">
                       <li>Created a multilingual chatbot to enhance user experience.</li>
                       <li>Assisted in the development of proof-of-concepts (POCs) for proposed features from the Product team.</li>
                       <li>Collaborated with various teams to streamline and expedite product releases.</li>
@@ -372,18 +373,18 @@
                 </div>
               </div>
 
-              <div class="flex justify-between flex-wrap lg:block">
-                <div class="relative text-primaryText h-fit w-full p-4 mt-6">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl z-10"></div>
+              <div class="flex justify-between flex-wrap lg:block border-2 border-primaryText hover:border-highlighter rounded-xl">
+                <div class="relative text-primaryText h-fit w-full p-6">
                   <div class="relative z-20">
-                    <a href="https://agiliad.com/" target="_blank">
-                      <img class="mr-4" src="./images/resume/agiliad.png" alt="Agiliad" />
-                    </a>
-                    <div class="flex h-10 mt-2">
-                      <div class="mr-4 flex items-center">Software Engineer</div>
+                    <div class="flex">
+                      <a href="https://agiliad.com/" target="_blank">
+                        <img class="mr-4" src="./images/resume/agiliad.png" alt="Agiliad" />
+                      </a>
+
                       <div class="pl-4 font-dancing border-l-2 border-highlighter flex items-center">March 2020 - August 2021</div>
                     </div>
-                    <ul class="text-sm list-disc pl-6 space-y-2 mt-5 mb-1">
+                    <div class="mt-3 flex items-center">Software Engineer</div>
+                    <ul class="text-md list-disc pl-6 space-y-2 mt-5 mb-1">
                       <li>Assisted in the development of a single-page application utilising the React Framework.</li>
                       <li>Collaborated with the UX team to design a visually appealing user interface.</li>
                       <li>Addressed customer issues by maintaining production code and offering immediate hotfix solutions.</li>
@@ -399,8 +400,7 @@
                     <div class="text-2xl text-primaryText border-b-2 border-highlighter w-fit">Education</div>
                   </div>
                   <div>
-                    <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto">
-                      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl z-10"></div>
+                    <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto border-2 border-primaryText hover:border-highlighter rounded-xl">
                       <div class="relative z-20">
                         <div class="flex">
                           <a href="https://www.cdac.in/" target="_blank">
@@ -414,8 +414,7 @@
                     </div>
                   </div>
                   <div>
-                    <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto">
-                      <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl z-10"></div>
+                    <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto border-2 border-primaryText hover:border-highlighter rounded-xl">
                       <div class="relative z-20">
                         <div class="flex">
                           <a href="https://aktu.ac.in/" target="_blank">
@@ -435,8 +434,7 @@
                     <div class="text-2xl text-primaryText border-b-2 border-highlighter w-fit">Awards & Certificates</div>
                   </div>
 
-                  <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto">
-                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl z-10"></div>
+                  <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto border-2 border-primaryText hover:border-highlighter rounded-xl">
                     <div class="relative z-20">
                       <div class="flex items-center">
                         <a href="https://agiliad.com/" target="_blank">
@@ -448,8 +446,7 @@
                     </div>
                     <div class="mt-4 text-lg">The Code Phoenix Award</div>
                   </div>
-                  <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto">
-                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl z-10"></div>
+                  <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto border-2 border-primaryText hover:border-highlighter rounded-xl">
                     <div class="relative z-20">
                       <div class="flex items-center">
                         <a href="https://agiliad.com/" target="_blank">
@@ -460,8 +457,7 @@
                     </div>
                     <div class="mt-4 text-lg">The Top Squad Award</div>
                   </div>
-                  <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto">
-                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto border-2 border-primaryText hover:border-highlighter rounded-xl">
                     <div class="relative z-20">
                       <div class="flex items-center">
                         <a href="https://www.udemy.com/certificate/UC-73700355-7a56-4350-bf6c-640100a8c21d/" target="_blank">
@@ -472,8 +468,7 @@
                       <div class="mt-4 text-lg">The Complete 2021 Web Development Bootcamp</div>
                     </div>
                   </div>
-                  <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto">
-                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto border-2 border-primaryText hover:border-highlighter rounded-xl">
                     <div class="relative z-20">
                       <div class="flex items-center">
                         <a href="https://www.udemy.com/certificate/UC-d6a0ba8f-e410-44fc-8a73-95dbfe74a5e6/" target="_blank">
@@ -484,8 +479,7 @@
                       <div class="mt-4 text-lg">React - The Complete Guide (incl Hooks, Redux)</div>
                     </div>
                   </div>
-                  <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto">
-                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+                  <div class="relative text-primaryText h-fit p-4 mt-6 md:w-4/6 lg:w-full mx-auto border-2 border-primaryText hover:border-highlighter rounded-xl">
                     <div class="relative z-20">
                       <div class="flex items-center">
                         <a href="https://agiliad.com/" target="_blank">
@@ -505,7 +499,7 @@
 
       <!-- Contact Section -->
       <section id="contact" class="py-16">
-        <div class="max-w-screen-xl mx-6 xl:mx-auto">
+        <div class="max-w-screen-xl px-6 m-auto">
           <div class="mx-auto w-fit">
             <div class="font-dancing font-bold text-sm text-highlighter mb-1">Collaborate with Me,</div>
             <div class="text-5xl text-primaryText border-b-2 border-highlighter w-fit">Contact</div>
@@ -519,10 +513,7 @@
             <span id="email" class="mx-2">ankitrajput1902@gmail.com</span>
             <i class="relative fa-regular fa-copy hover:text-highlighter hover:cursor-pointer" title="Copied." onclick="copyContent('email')">
               <div id="email-tooltip" class="hidden font-sans absolute top-[-8px] left-[-16px] md:left-0 z-50 text-sm w-max -translate-x-1/2 -translate-y-full text-primaryText">
-                <div class="relative flex justify-center items-center p-1">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
-                  Copied to clipboard!
-                </div>
+                <div class="relative flex justify-center items-center p-1">Copied to clipboard!</div>
               </div>
             </i>
           </div>
@@ -531,39 +522,32 @@
             <span id="phone" class="mx-2">+91 7503911569</span>
             <i class="relative fa-regular fa-copy hover:text-highlighter hover:cursor-pointer" onclick="copyContent('phone')">
               <div id="phone-tooltip" class="hidden font-sans absolute top-[-8px] left-1/2 z-50 text-sm w-max -translate-x-1/2 -translate-y-full text-primaryText">
-                <div class="relative flex justify-center items-center p-1">
-                  <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
-                  Copied to clipboard!
-                </div>
+                <div class="relative flex justify-center items-center p-1">Copied to clipboard!</div>
               </div>
             </i>
           </div>
           <div class="text-center mx-auto mt-16">You may also find me on these platforms!</div>
           <div class="flex mt-5 gap-5 mx-auto w-fit">
             <a href="https://www.facebook.com/ankitrajput.delhi" target="_blank">
-              <div class="relative hover:text-highlighter hover:cursor-pointer flex w-10 h-10 justify-center items-center">
-                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+              <div class="flex w-10 h-10 justify-center items-center border-2 border-primaryText hover:border-highlighter hover:text-highlighter rounded-md cursor-pointer">
                 <i class="fa-brands fa-meta"></i>
               </div>
             </a>
 
             <a href="https://github.com/ankit49" target="_blank">
-              <div class="relative hover:text-highlighter hover:cursor-pointer flex w-10 h-10 justify-center items-center">
-                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+              <div class="flex w-10 h-10 justify-center items-center border-2 border-primaryText hover:border-highlighter hover:text-highlighter rounded-md cursor-pointer">
                 <i class="fa-brands fa-github"></i>
               </div>
             </a>
 
             <a href="https://www.linkedin.com/in/ankit49/" target="_blank">
-              <div class="relative hover:text-highlighter hover:cursor-pointer flex w-10 h-10 justify-center items-center">
-                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+              <div class="flex w-10 h-10 justify-center items-center border-2 border-primaryText hover:border-highlighter hover:text-highlighter rounded-md cursor-pointer">
                 <i class="fa-brands fa-linkedin-in"></i>
               </div>
             </a>
 
             <a href="https://www.instagram.com/rajput__ankit" target="_blank">
-              <div class="relative hover:text-highlighter hover:cursor-pointer flex w-10 h-10 justify-center items-center">
-                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gradiantFrom to-gradiantTo opacity-10 rounded-md shadow-xl"></div>
+              <div class="flex w-10 h-10 justify-center items-center border-2 border-primaryText hover:border-highlighter hover:text-highlighter rounded-md cursor-pointer">
                 <i class="fa-brands fa-instagram"></i>
               </div>
             </a>
@@ -573,7 +557,7 @@
 
       <!-- Footer Section -->
       <footer class="py-8">
-        <div class="max-w-screen-xl mx-6 lg:mx-auto">
+        <div class="max-w-screen-xl px-6 m-auto">
           <div class="mx-auto w-fit text-xs md:text-sm lg:text-base">
             Copyright @ 2024 | <span class="underline text-highlighter">Designed</span> and <span class="underline text-highlighter">Developed</span> by Ankit Rajput
           </div>
