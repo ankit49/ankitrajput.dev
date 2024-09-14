@@ -3,21 +3,19 @@
 @tailwind utilities;
 
 .light {
-  --primary-bg-color: #ffffff;
-  --secondary-bg-color: #f8f9fa;
-  --primary-text: #333333;
-  --secondary-text: #6c757d;
+  --primary-bg-color: #fff;
+  --secondary-bg-color: #f2f2f2;
+  --primary-text: #030303;
+  --secondary-text: #383838;
   --highlighter-color: #007bff;
-  --gradient-primary: rgba(255, 255, 255, 0.5);
-  --gradient-secondary: #000000;
+  --highlighter-hover: #00bfff;
 }
 
 .dark {
   --primary-bg-color: #121212;
   --secondary-bg-color: #1e1e1e;
-  --primary-text: #e0e0e0;
-  --secondary-text: #b0b0b0;
+  --primary-text: #eeeeee;
+  --secondary-text: #dcdcdc;
   --highlighter-color: #00bfff;
-  --gradient-primary: rgba(0, 0, 0, 0.5);
-  --gradient-secondary: #ffffff;
+  --highlighter-hover: #007bff;
 }
