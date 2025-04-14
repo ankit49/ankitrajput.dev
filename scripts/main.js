@@ -1,11 +1,12 @@
 let currentTheme = localStorage.getItem("theme") ? localStorage.getItem("theme") : "dark";
-let navLinks = document.querySelectorAll(".navbar a");
-let sections = document.querySelectorAll("section");
-let udemy = document.querySelectorAll(".udemy");
-let isMobileNavOpen = false;
 document.body.classList.add(currentTheme == "light" ? "light" : "dark");
+let isMobileNavOpen = false;
 
 function switchMode() {
+  let udemy = document.querySelectorAll(".udemy");
+  let logo = document.getElementById("logo");
+  let heroImg = document.getElementById("hero-img");
+
   if (currentTheme == "light") {
     document.body.classList.remove("light");
     document.body.classList.add("dark");
@@ -17,6 +18,9 @@ function switchMode() {
     localStorage.setItem("theme", "light");
     currentTheme = "light";
   }
+  heroImg.src = currentTheme == "light" ? "./images/hero-light.png" : "./images/hero-dark.png";
+  logo.src = currentTheme == "light" ? "./images/logo-light.png" : "./images/logo-dark.png";
+
   udemy.forEach((el) => {
     el.src = currentTheme == "dark" ? "./images/resume/udemy-light.png" : "./images/resume/udemy-dark.png";
   });
@@ -42,6 +46,9 @@ function toggleMobileNav() {
 }
 
 function updateActiveSection() {
+  let navLinks = document.querySelectorAll(".navbar a");
+  let sections = document.querySelectorAll("section");
+
   let maxVisibleArea = 0;
   let activeSection = null;
 
@@ -107,15 +114,31 @@ const copyContent = async (element) => {
   }
 };
 
-window.onload = function () {
+function init() {
+  let currentTheme = localStorage.getItem("theme") ? localStorage.getItem("theme") : "dark";
+  let navLinks = document.querySelectorAll(".navbar a");
+  let udemy = document.querySelectorAll(".udemy");
+  let logo = document.getElementById("logo");
+  let heroImg = document.getElementById("hero-img");
+
   navLinks.forEach(function (link) {
     link.addEventListener("click", scrollToSection);
   });
 
+  if (heroImg) {
+    heroImg.src = currentTheme == "light" ? "./images/hero-light.png" : "./images/hero-dark.png";
+  }
+
+  if (logo) {
+    logo.src = currentTheme == "light" ? "./images/logo-light.png" : "./images/logo-dark.png";
+  }
+
   udemy.forEach((el) => {
-    el.src = currentTheme == "dark" ? "./images/resume/udemy-light.png" : "./images/resume/udemy-dark.png";
+    if (el) {
+      el.src = currentTheme == "dark" ? "./images/resume/udemy-light.png" : "./images/resume/udemy-dark.png";
+    }
   });
 
   window.addEventListener("scroll", updateActiveSection);
   window.addEventListener("resize", updateActiveSection);
-};
+}

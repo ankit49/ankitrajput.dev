@@ -2,7 +2,7 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
-  content: ["./*.{html,js}"],
+  content: ["./*.{html,js}", "./*/*.{html,js}"],
   theme: {
     fontFamily: {
       sans: ["Noto Sans"],
@@ -17,6 +17,21 @@ module.exports = {
         secondaryText: "var(--secondary-text)",
         highlighter: "var(--highlighter-color)",
         highlighter2: "var(--highlighter-hover)",
+      },
+      keyframes: {
+        wave: {
+          "0%": { transform: "rotate(0deg)" },
+          "10%": { transform: "rotate(14deg)" },
+          "20%": { transform: "rotate(-8deg)" },
+          "30%": { transform: "rotate(14deg)" },
+          "40%": { transform: "rotate(-4deg)" },
+          "50%": { transform: "rotate(10deg)" },
+          "60%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(0deg)" },
+        },
+      },
+      animation: {
+        wave: "wave 2s infinite",
       },
     },
   },

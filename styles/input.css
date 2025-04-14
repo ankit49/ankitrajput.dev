@@ -7,7 +7,7 @@
   --secondary-bg-color: #f2f2f2;
   --primary-text: #030303;
   --secondary-text: #383838;
-  --highlighter-color: #007bff;
+  --highlighter-color: #1e69ff;
   --highlighter-hover: #00bfff;
 }
 
@@ -16,6 +16,6 @@
   --secondary-bg-color: #1e1e1e;
   --primary-text: #eeeeee;
   --secondary-text: #dcdcdc;
-  --highlighter-color: #00bfff;
+  --highlighter-color: #1e69ff;
   --highlighter-hover: #007bff;
 }
