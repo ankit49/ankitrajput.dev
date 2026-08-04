@@ -1,67 +1,763 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-US" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Ankit Rajput is a senior full-stack software engineer building thoughtful, reliable web products with React, TypeScript, and Node.js."
+    />
+    <meta name="theme-color" content="#101114" />
+    <meta property="og:title" content="Ankit Rajput — Senior Full-Stack Software Engineer" />
+    <meta
+      property="og:description"
+      content="Product-minded engineering across accessible interfaces, scalable front ends, and dependable web experiences."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.ankitrajput.in/" />
+    <title>Ankit Rajput — Senior Full-Stack Software Engineer</title>
 
-    <title>Ankit Rajput</title>
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem("portfolio-theme");
+        const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        document.documentElement.dataset.theme = savedTheme || systemTheme;
+      })();
+    </script>
 
-    <!------------ Fonts ------------>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap" rel="stylesheet" />
-    <!------------ Css ------------>
-    <link rel="stylesheet" href="./styles/output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles/site.css" />
   </head>
-  <body class="text-secondaryText relative">
-    <!-- <div id="navbar-desktop"></div>
-    <div id="navbar-mobile"></div> -->
-    <div class="w-full bg-primaryBg">
-      <section id="header"></section>
-      <section id="home"></section>
-      <section id="about" class="py-16"></section>
-      <section id="skills" class="pt-16 pb-24"></section>
-      <section id="resume" class="py-16"></section>
-      <section id="contact" class="py-16"></section>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-      <!-- Footer Section -->
-      <footer class="py-8">
-        <div class="max-w-screen-xl px-6 m-auto">
-          <div class="mx-auto w-fit text-xs md:text-sm lg:text-base">
-            Copyright @ 2024 | <span class="underline text-highlighter">Designed</span> and <span class="underline text-highlighter">Developed</span> by Ankit Rajput
+    <header class="site-header" id="site-header">
+      <div class="header-shell">
+        <a class="brand" href="#home" aria-label="Ankit Rajput, back to home">
+          <span class="brand-logo" aria-hidden="true">
+            <img class="brand-logo-img" src="./images/logo.png" alt="" />
+          </span>
+        </a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+          <a class="nav-link is-active" href="#home">Home</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#expertise">Expertise</a>
+          <a class="nav-link" href="#work">Work</a>
+          <a class="nav-link" href="#experience">Experience</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="icon-button theme-button" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch theme">
+            <i class="fa-regular fa-sun theme-icon-light" aria-hidden="true"></i>
+            <i class="fa-regular fa-moon theme-icon-dark" aria-hidden="true"></i>
+          </button>
+          <a class="button button-secondary button-compact" href="./resume/Ankit_Rajput.pdf" download>
+            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+            <span>Resume</span>
+          </a>
+          <button
+            class="icon-button menu-button"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero section-anchor" id="home" aria-labelledby="hero-title">
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <p class="hero-intro">Hi, I’m <span class="hero-wave" aria-hidden="true">👋</span></p>
+            <h1 class="hero-name" id="hero-title">Ankit <span>Rajput</span></h1>
+            <p class="hero-role">Senior Full-Stack Software Engineer</p>
+            <p class="hero-lede">
+              I turn complex product requirements into fast, accessible web experiences—and carry them confidently
+              into production.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#work">
+                View my work <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+              <a class="button button-secondary" href="mailto:ankitrajput1902@gmail.com">
+                <i class="fa-regular fa-envelope" aria-hidden="true"></i> Contact me
+              </a>
+            </div>
+            <div class="hero-experience" aria-label="More than six years of professional experience, currently building Resume-Now at BOLD">
+              <strong>6+</strong>
+              <span class="hero-experience-copy">
+                <b>Years of experience</b>
+                <small>Building production web products since 2020</small>
+              </span>
+              <div class="hero-current">
+                <small>Currently</small>
+                <strong>Building Resume-Now at BOLD</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-artwork" aria-label="Illustration representing Ankit's web design and development work">
+            <img class="hero-theme-art hero-art-dark" src="./images/hero-dark.png" alt="" />
+            <img class="hero-theme-art hero-art-light" src="./images/hero-light.png" alt="" />
           </div>
         </div>
-      </footer>
-    </div>
+      </section>
 
-    <!------------ Scripts ------------>
+      <section class="section section-soft section-anchor" id="about" aria-labelledby="about-title">
+        <div class="shell">
+          <div class="about-heading">
+            <p class="eyebrow">A little context</p>
+            <h2 id="about-title">Building web products for <span>people and production.</span></h2>
+          </div>
 
-    <script src="./scripts/main.js"></script>
-    <script>
-      const loadHTML = (id, file) => {
-        return fetch(file)
-          .then((res) => res.text())
-          .then((data) => {
-            document.getElementById(id).innerHTML = data;
-          });
-      };
+          <div class="about-layout">
+            <figure class="about-portrait">
+              <div class="about-photo-frame">
+                <img src="./images/profile.jpg" alt="Portrait of Ankit Rajput at Amber Fort in Jaipur" loading="lazy" />
+              </div>
+              <figcaption>
+                <strong>Ankit Rajput</strong>
+                <span>Senior Full-Stack Software Engineer · India</span>
+              </figcaption>
+            </figure>
 
-      const loadAllSections = async () => {
-        await Promise.all([
-          loadHTML("header", "sections/header.html"),
-          loadHTML("home", "sections/hero.html"),
-          loadHTML("about", "sections/about.html"),
-          loadHTML("skills", "sections/skills.html"),
-          loadHTML("resume", "sections/resume.html"),
-          loadHTML("contact", "sections/contact.html"),
-        ]);
+            <div class="about-content">
+              <p class="about-lead">
+                I enjoy making complicated product problems feel simple—for the people using the product and the
+                teams responsible for maintaining it.
+              </p>
+              <div class="section-copy">
+                <p>
+                  Since 2020, I’ve worked across front-end and full-stack development, building responsive interfaces,
+                  practical Node.js services, and the connective tissue required to ship both reliably.
+                </p>
+                <p>
+                  Today, I build customer-facing experiences for Resume-Now at BOLD. Previously at Agiliad, I grew
+                  from Software Engineer to Senior Software Engineer while contributing to product experiments,
+                  multilingual experiences, production support, and engineering enablement.
+                </p>
+              </div>
 
-        init();
-      };
+              <div class="about-principle">
+                <strong>Working principle</strong>
+                <p>Make the experience obvious to the person using it—and understandable to the team maintaining it.</p>
+              </div>
 
-      loadAllSections();
-    </script>
+              <div class="feature-list" aria-label="Core strengths">
+                <div class="feature-item">
+                  <span class="feature-icon"><i class="fa-solid fa-compass-drafting" aria-hidden="true"></i></span>
+                  <h3>Product-minded engineering</h3>
+                  <p>Balance user value, delivery scope, and technical decisions.</p>
+                </div>
+                <div class="feature-item">
+                  <span class="feature-icon"><i class="fa-solid fa-universal-access" aria-hidden="true"></i></span>
+                  <h3>Responsive, usable interfaces</h3>
+                  <p>Create clear experiences across devices, states, and abilities.</p>
+                </div>
+                <div class="feature-item">
+                  <span class="feature-icon"><i class="fa-solid fa-rocket" aria-hidden="true"></i></span>
+                  <h3>Idea-to-production ownership</h3>
+                  <p>Carry thoughtful work from early direction into reliable delivery.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-anchor" id="expertise" aria-labelledby="expertise-title">
+        <div class="shell">
+          <div class="expertise-heading">
+            <div>
+              <p class="eyebrow">How I approach the work</p>
+              <h2 id="expertise-title">From product intent to <span>production-ready experiences.</span></h2>
+            </div>
+            <p>
+              I bring design awareness and engineering discipline to the same table, keeping the experience clear
+              for users and the implementation dependable for the team behind it.
+            </p>
+          </div>
+
+          <ol class="process-list">
+            <li class="process-step">
+              <div class="process-step-meta"><span>01</span><i class="fa-regular fa-comments" aria-hidden="true"></i></div>
+              <h3>Understand the problem</h3>
+              <p>Align user needs, product intent, and technical constraints before choosing a solution.</p>
+            </li>
+            <li class="process-step">
+              <div class="process-step-meta"><span>02</span><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i></div>
+              <h3>Shape the experience</h3>
+              <p>Turn product flows into responsive interfaces with clear hierarchy, states, and feedback.</p>
+            </li>
+            <li class="process-step">
+              <div class="process-step-meta"><span>03</span><i class="fa-solid fa-code" aria-hidden="true"></i></div>
+              <h3>Build for change</h3>
+              <p>Create reusable patterns and pragmatic APIs that teams can extend confidently.</p>
+            </li>
+            <li class="process-step">
+              <div class="process-step-meta"><span>04</span><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></div>
+              <h3>Improve in production</h3>
+              <p>Use production insight and product feedback to guide focused improvements.</p>
+            </li>
+          </ol>
+
+          <div class="skills-block">
+            <div class="skills-intro">
+              <div>
+                <p class="eyebrow">Technical toolkit</p>
+                <h2>Tools chosen for <span>shipping well.</span></h2>
+              </div>
+              <p>
+                Strongest across React, TypeScript, and Node.js, with the delivery and design tools needed to carry
+                work from an early idea into a maintained product.
+              </p>
+            </div>
+            <div class="skill-groups">
+              <article class="skill-group">
+                <div class="skill-group-heading">
+                  <span>Interface</span>
+                  <h3>Front end</h3>
+                </div>
+                <div class="skill-grid">
+                  <span class="skill-chip"><img src="./images/skills/react-js.png" alt="" />React</span>
+                  <span class="skill-chip"><img src="./images/skills/typescript.png" alt="" />TypeScript</span>
+                  <span class="skill-chip"><img src="./images/skills/javascript.png" alt="" />JavaScript</span>
+                  <span class="skill-chip"><img src="./images/skills/redux.png" alt="" />Redux</span>
+                  <span class="skill-chip"><img src="./images/skills/html.png" alt="" />HTML</span>
+                  <span class="skill-chip"><img src="./images/skills/css.png" alt="" />CSS / SCSS</span>
+                  <span class="skill-chip"><img src="./images/skills/tailwind.png" alt="" />Tailwind CSS</span>
+                </div>
+              </article>
+              <article class="skill-group">
+                <div class="skill-group-heading">
+                  <span>Services</span>
+                  <h3>Back end</h3>
+                </div>
+                <div class="skill-grid">
+                  <span class="skill-chip"><img src="./images/skills/node-js.png" alt="" />Node.js</span>
+                  <span class="skill-chip"><img src="./images/skills/express-js.png" alt="" />Express</span>
+                  <span class="skill-chip text-chip">REST APIs</span>
+                  <span class="skill-chip"><img src="./images/skills/mongo-db.png" alt="" />MongoDB</span>
+                </div>
+              </article>
+              <article class="skill-group">
+                <div class="skill-group-heading">
+                  <span>Shipping</span>
+                  <h3>Delivery &amp; operations</h3>
+                </div>
+                <div class="skill-grid">
+                  <span class="skill-chip"><img src="./images/skills/git.png" alt="" />Git</span>
+                  <span class="skill-chip"><img src="./images/skills/docker.png" alt="" />Docker</span>
+                  <span class="skill-chip"><img src="./images/skills/jenkins.png" alt="" />Jenkins</span>
+                  <span class="skill-chip"><img src="./images/skills/kibana.png" alt="" />Kibana</span>
+                  <span class="skill-chip"><img src="./images/skills/jira.png" alt="" />Jira</span>
+                </div>
+              </article>
+              <article class="skill-group">
+                <div class="skill-group-heading">
+                  <span>Collaboration</span>
+                  <h3>Design collaboration</h3>
+                </div>
+                <div class="skill-grid">
+                  <span class="skill-chip"><img src="./images/skills/figma.png" alt="" />Figma</span>
+                  <span class="skill-chip text-chip">Responsive UI</span>
+                  <span class="skill-chip text-chip">Design handoff</span>
+                  <span class="skill-chip"><img src="./images/skills/photoshop.png" alt="" />Photoshop</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-ink section-anchor" id="work" aria-labelledby="work-title">
+        <div class="shell">
+          <div class="work-heading">
+            <div>
+              <p class="eyebrow">Selected work</p>
+              <h2 id="work-title">Work built around <span>real product needs.</span></h2>
+            </div>
+            <p>
+              A growing selection of enterprise, client, and independent product work across the full stack.
+            </p>
+          </div>
+          <div class="work-list">
+            <article class="work-card">
+              <div class="work-preview work-preview-toolsera" aria-hidden="true">
+                <div class="preview-window">
+                  <div class="preview-toolbar"><span></span><span></span><span></span></div>
+                  <div class="toolsera-preview">
+                    <div class="toolsera-preview-head"><span></span><i></i></div>
+                    <div class="toolsera-preview-grid">
+                      <span><i class="fa-solid fa-code"></i></span>
+                      <span><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                      <span><i class="fa-solid fa-calculator"></i></span>
+                      <span><i class="fa-solid fa-file-lines"></i></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="work-card-content">
+                <span class="work-kicker">Personal product · Founder &amp; engineer</span>
+                <h3>Toolsera</h3>
+                <p>Account-free tools for JSON, Tailwind CSS, PDFs, images, text, and everyday finance.</p>
+                <div class="work-card-action" aria-hidden="true">
+                  <span>View project details</span>
+                  <i class="fa-solid fa-arrow-right work-card-arrow"></i>
+                </div>
+              </div>
+              <button
+                class="work-card-open"
+                type="button"
+                data-project="toolsera"
+                aria-haspopup="dialog"
+                aria-controls="work-dialog"
+                aria-label="View details for Toolsera"
+              ></button>
+            </article>
+
+            <article class="work-card">
+              <div class="work-preview work-preview-resume" aria-hidden="true">
+                <div class="preview-window">
+                  <div class="preview-toolbar"><span></span><span></span><span></span></div>
+                  <div class="resume-preview-layout">
+                    <div class="resume-preview-menu"><span></span><span></span><span></span><span></span></div>
+                    <div class="resume-preview-page">
+                      <span class="preview-name"></span>
+                      <span></span><span></span>
+                      <strong></strong>
+                      <span></span><span></span><span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="work-card-content">
+                <span class="work-kicker">BOLD · Product engineering</span>
+                <h3>Resume-Now builder</h3>
+                <p>Resume-building experiences, shared portal components, AI-assisted features, and production improvements.</p>
+                <div class="work-card-action" aria-hidden="true">
+                  <span>View project details</span>
+                  <i class="fa-solid fa-arrow-right work-card-arrow"></i>
+                </div>
+              </div>
+              <button
+                class="work-card-open"
+                type="button"
+                data-project="resumeNow"
+                aria-haspopup="dialog"
+                aria-controls="work-dialog"
+                aria-label="View details for Resume-Now builder"
+              ></button>
+            </article>
+
+            <article class="work-card">
+              <div class="work-preview work-preview-photon" aria-hidden="true">
+                <div class="preview-window">
+                  <div class="preview-toolbar"><span></span><span></span><span></span></div>
+                  <div class="photon-preview">
+                    <div class="photon-preview-metrics"><span></span><span></span><span></span></div>
+                    <div class="photon-preview-chart">
+                      <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="work-card-content">
+                <span class="work-kicker">Part-time project · Software engineering</span>
+                <h3>Photon Insight</h3>
+                <p>A part-time product engagement focused on building and refining a practical web experience.</p>
+                <div class="work-card-action" aria-hidden="true">
+                  <span>View project details</span>
+                  <i class="fa-solid fa-arrow-right work-card-arrow"></i>
+                </div>
+              </div>
+              <button
+                class="work-card-open"
+                type="button"
+                data-project="photonInsight"
+                aria-haspopup="dialog"
+                aria-controls="work-dialog"
+                aria-label="View details for Photon Insight"
+              ></button>
+            </article>
+
+            <article class="work-card">
+              <div class="work-preview work-preview-chat" aria-hidden="true">
+                <div class="preview-window">
+                  <div class="chat-preview-header"><span></span><strong></strong><i></i></div>
+                  <div class="chat-preview-body">
+                    <div class="chat-bubble chat-bubble-in"><span></span><span></span></div>
+                    <div class="chat-bubble chat-bubble-out"><span></span></div>
+                    <div class="chat-bubble chat-bubble-in chat-bubble-short"><span></span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="work-card-content">
+                <span class="work-kicker">Agiliad · Full-stack engineering</span>
+                <h3>Multilingual support chatbot</h3>
+                <p>A localized conversational experience spanning multiple languages and full-stack integrations.</p>
+                <span class="work-card-confidentiality">
+                  <i class="fa-solid fa-lock" aria-hidden="true"></i> Client and product names withheld
+                </span>
+                <div class="work-card-action" aria-hidden="true">
+                  <span>View project details</span>
+                  <i class="fa-solid fa-arrow-right work-card-arrow"></i>
+                </div>
+              </div>
+              <button
+                class="work-card-open"
+                type="button"
+                data-project="chatbot"
+                aria-haspopup="dialog"
+                aria-controls="work-dialog"
+                aria-label="View details for Multilingual support chatbot"
+              ></button>
+            </article>
+
+            <article class="work-card">
+              <div class="work-preview work-preview-deployment" aria-hidden="true">
+                <div class="preview-window">
+                  <div class="preview-toolbar"><span></span><span></span><span></span></div>
+                  <div class="deployment-preview-layout">
+                    <div class="deployment-sidebar"><span></span><span></span><span></span><span></span></div>
+                    <div class="deployment-canvas">
+                      <div class="deployment-summary"><span></span><i></i></div>
+                      <div class="deployment-flow">
+                        <span class="deployment-node is-complete"></span>
+                        <i></i>
+                        <span class="deployment-node is-active"></span>
+                        <i></i>
+                        <span class="deployment-node"></span>
+                      </div>
+                      <div class="deployment-environments"><span></span><span></span><span></span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="work-card-content">
+                <span class="work-kicker">Agiliad · Front-end engineering</span>
+                <h3>Enterprise deployment platform</h3>
+                <p>
+                  A React interface for managing application deployments across environments and infrastructure.
+                </p>
+                <span class="work-card-confidentiality">
+                  <i class="fa-solid fa-lock" aria-hidden="true"></i> Client and product names withheld
+                </span>
+                <div class="work-card-action" aria-hidden="true">
+                  <span>View project details</span>
+                  <i class="fa-solid fa-arrow-right work-card-arrow"></i>
+                </div>
+              </div>
+              <button
+                class="work-card-open"
+                type="button"
+                data-project="deployment"
+                aria-haspopup="dialog"
+                aria-controls="work-dialog"
+                aria-label="View details for Enterprise deployment platform"
+              ></button>
+            </article>
+          </div>
+        </div>
+
+        <dialog class="work-dialog" id="work-dialog" aria-labelledby="work-dialog-title" aria-describedby="work-dialog-description">
+          <div class="work-dialog-shell">
+            <button class="work-dialog-close" type="button" aria-label="Close project details">
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+            <div class="work-dialog-head">
+              <span class="work-dialog-icon" aria-hidden="true">
+                <i class="fa-solid fa-code-branch" id="work-dialog-icon"></i>
+              </span>
+              <div>
+                <span class="work-dialog-kicker" id="work-dialog-kicker"></span>
+                <h3 id="work-dialog-title"></h3>
+                <p id="work-dialog-role"></p>
+              </div>
+            </div>
+            <div class="work-dialog-body">
+              <div class="work-dialog-overview">
+                <span class="work-dialog-label">Project overview</span>
+                <p id="work-dialog-description"></p>
+                <p class="work-dialog-confidentiality" id="work-dialog-confidentiality" hidden>
+                  <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                  <span></span>
+                </p>
+                <span class="work-dialog-label">Key contributions</span>
+                <ul class="work-highlights work-dialog-highlights" id="work-dialog-highlights"></ul>
+              </div>
+              <div class="work-dialog-side" id="work-dialog-side">
+                <div class="work-dialog-stack" id="work-dialog-stack">
+                  <span class="work-dialog-label">Technology stack</span>
+                  <div class="tag-row work-dialog-tags" id="work-dialog-tags"></div>
+                </div>
+                <a class="work-dialog-link" id="work-dialog-link" href="#" target="_blank" rel="noreferrer" hidden>
+                  Visit live product <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </dialog>
+      </section>
+
+      <section class="section section-soft section-anchor" id="experience" aria-labelledby="experience-title">
+        <div class="shell">
+          <div class="experience-heading">
+            <div>
+              <p class="eyebrow">Career &amp; learning</p>
+              <h2 id="experience-title">Growing through <span>real product work.</span></h2>
+            </div>
+            <div class="experience-intro">
+              <p>
+                More than six years of building web products, taking on broader ownership, and helping teams deliver
+                reliable experiences in production.
+              </p>
+              <a class="button button-secondary" href="./resume/Ankit_Rajput.pdf" download>
+                <i class="fa-solid fa-arrow-down" aria-hidden="true"></i> Download full resume
+              </a>
+            </div>
+          </div>
+          <div class="experience-layout">
+            <div class="career-panel">
+              <div class="career-panel-heading">
+                <span><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Professional experience</span>
+                <small>2020 — Present</small>
+              </div>
+              <div>
+                <article class="career-entry is-current">
+                  <span class="career-period">2025 — Present</span>
+                  <span class="career-rail" aria-hidden="true"><i></i></span>
+                  <div class="career-entry-content">
+                    <div class="career-entry-heading">
+                      <span class="career-logo"><img src="./images/resume/bold.png" alt="" /></span>
+                      <div>
+                        <span class="career-company">BOLD · Resume-Now</span>
+                        <h3>Senior Software Engineer</h3>
+                      </div>
+                      <span class="career-current">Current</span>
+                    </div>
+                    <ul class="career-points">
+                      <li>Build customer-facing interfaces for the Resume-Now builder.</li>
+                      <li>Partner with designers and back-end engineers to deliver cohesive product features.</li>
+                      <li>Improve page performance and resolve production issues.</li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="career-entry">
+                  <span class="career-period">2024 — 2025</span>
+                  <span class="career-rail" aria-hidden="true"><i></i></span>
+                  <div class="career-entry-content">
+                    <div class="career-entry-heading">
+                      <span class="career-logo"><img src="./images/resume/bold.png" alt="" /></span>
+                      <div>
+                        <span class="career-company">BOLD · Resume-Now</span>
+                        <h3>Software Engineer</h3>
+                      </div>
+                    </div>
+                    <ul class="career-points">
+                      <li>Built customer-facing interfaces for the Resume-Now builder.</li>
+                      <li>Collaborated with designers and back-end engineers to deliver cohesive product features.</li>
+                      <li>Improved page performance and resolved production issues.</li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="career-entry">
+                  <span class="career-period">2021 — 2024</span>
+                  <span class="career-rail" aria-hidden="true"><i></i></span>
+                  <div class="career-entry-content">
+                    <div class="career-entry-heading">
+                      <span class="career-logo"><img src="./images/resume/agiliad.png" alt="" /></span>
+                      <div>
+                        <span class="career-company">Agiliad Technologies</span>
+                        <h3>Senior Software Engineer</h3>
+                      </div>
+                    </div>
+                    <ul class="career-points">
+                      <li>Built multilingual conversational experiences and product proofs of concept.</li>
+                      <li>Coordinated across teams to support smoother product releases.</li>
+                      <li>Interviewed 50+ candidates and supported four team transitions.</li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="career-entry">
+                  <span class="career-period">2020 — 2021</span>
+                  <span class="career-rail" aria-hidden="true"><i></i></span>
+                  <div class="career-entry-content">
+                    <div class="career-entry-heading">
+                      <span class="career-logo"><img src="./images/resume/agiliad.png" alt="" /></span>
+                      <div>
+                        <span class="career-company">Agiliad Technologies</span>
+                        <h3>Software Engineer</h3>
+                      </div>
+                    </div>
+                    <ul class="career-points">
+                      <li>Developed a React single-page application in collaboration with the UX team.</li>
+                      <li>Maintained production code and delivered time-sensitive fixes.</li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <aside class="experience-sidebar" aria-label="Education, recognition, and continued learning">
+              <section class="career-side-card" aria-labelledby="education-heading">
+                <div class="career-side-heading">
+                  <span class="career-side-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
+                  <div>
+                    <span class="eyebrow">Foundation</span>
+                    <h3 id="education-heading">Education</h3>
+                  </div>
+                </div>
+                <div class="education-list">
+                  <article class="education-item">
+                    <span class="education-logo"><img src="./images/resume/cdac.png" alt="" /></span>
+                    <div>
+                      <span class="education-period">2019 — 2020</span>
+                      <h4>Postgraduate Diploma in Advanced Computing</h4>
+                      <p>C-DAC</p>
+                    </div>
+                  </article>
+                  <article class="education-item">
+                    <span class="education-logo"><img src="./images/resume/aktu.png" alt="" /></span>
+                    <div>
+                      <span class="education-period">2014 — 2018</span>
+                      <h4>B.Tech in Computer Science</h4>
+                      <p>Dr. A.P.J. Abdul Kalam Technical University</p>
+                    </div>
+                  </article>
+                </div>
+              </section>
+
+              <section class="career-side-card" aria-labelledby="recognition-heading">
+                <div class="career-side-heading">
+                  <span class="career-side-icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span>
+                  <div>
+                    <span class="eyebrow">Milestones</span>
+                    <h3 id="recognition-heading">Recognition &amp; learning</h3>
+                  </div>
+                </div>
+                <div class="recognition-list">
+                  <span><i class="fa-solid fa-star" aria-hidden="true"></i><span>Code Phoenix Award</span><small>2022</small></span>
+                  <span><i class="fa-solid fa-star" aria-hidden="true"></i><span>Top Squad Award</span><small>2022</small></span>
+                  <span><i class="fa-solid fa-star" aria-hidden="true"></i><span>Exceptional Greenhorn Award</span><small>2020</small></span>
+                </div>
+                <div class="credential-list">
+                  <a href="https://www.udemy.com/certificate/UC-73700355-7a56-4350-bf6c-640100a8c21d/" target="_blank" rel="noreferrer">
+                    <span>Web Development Bootcamp</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                  </a>
+                  <a href="https://www.udemy.com/certificate/UC-d6a0ba8f-e410-44fc-8a73-95dbfe74a5e6/" target="_blank" rel="noreferrer">
+                    <span>React — The Complete Guide</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </section>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-anchor" id="contact" aria-labelledby="contact-title">
+        <div class="shell">
+          <div class="contact-heading">
+            <div>
+              <p class="eyebrow">Start a conversation</p>
+              <h2 id="contact-title">Have a product problem worth solving? <span>Let’s talk.</span></h2>
+            </div>
+            <div class="contact-intro">
+              <p>
+                If you’re building a new experience, improving an existing product, or need an engineer who cares
+                about the details, send me a note.
+              </p>
+              <span class="contact-availability"><i aria-hidden="true"></i> Open to thoughtful product conversations</span>
+            </div>
+          </div>
+
+          <div class="contact-panel">
+            <div class="contact-primary">
+              <div class="contact-primary-label">
+                <span class="contact-primary-icon"><i class="fa-regular fa-envelope" aria-hidden="true"></i></span>
+                <span><small>Best way to reach me</small><strong>Email me directly</strong></span>
+              </div>
+              <a class="contact-email-link" href="mailto:ankitrajput1902@gmail.com">
+                <span id="email-value">ankitrajput1902@gmail.com</span>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+              </a>
+              <p>Share a little context about what you’re building and where you’d like an experienced engineering perspective.</p>
+              <button class="contact-copy-button" type="button" data-copy-target="email-value">
+                <i class="fa-regular fa-copy" aria-hidden="true"></i> Copy email address
+              </button>
+            </div>
+
+            <div class="contact-secondary">
+              <div class="contact-detail-list">
+                <div class="contact-detail-row">
+                  <span class="contact-detail-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span>
+                  <div>
+                    <small>Phone</small>
+                    <a id="phone-value" href="tel:+917503911569">+91 75039 11569</a>
+                  </div>
+                  <button class="contact-icon-button" type="button" data-copy-target="phone-value" aria-label="Copy phone number">
+                    <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="contact-detail-row">
+                  <span class="contact-detail-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+                  <div>
+                    <small>Based in</small>
+                    <strong>India · IST</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-socials" aria-label="Social profiles">
+                <span>Find me online</span>
+                <div class="contact-social-list">
+                  <a href="https://github.com/ankit49" target="_blank" rel="noreferrer">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/ankit49/" target="_blank" rel="noreferrer">
+                    <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span>
+                  </a>
+                  <a href="https://www.instagram.com/rajput__ankit" target="_blank" rel="noreferrer">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i><span>Instagram</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="contact-status" id="copy-status" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell">
+        <div class="footer-bottom">
+          <span>© <span id="current-year">2026</span> Ankit Rajput</span>
+          <span>Designed with intent. Built with care.</span>
+          <a href="#home">Back to top <i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./scripts/main.js" defer></script>
   </body>
 </html>
