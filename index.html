@@ -489,6 +489,16 @@
                 <span class="work-dialog-kicker" id="work-dialog-kicker"></span>
                 <h3 id="work-dialog-title"></h3>
                 <p id="work-dialog-role"></p>
+                <a
+                  class="work-dialog-link work-dialog-header-link"
+                  id="work-dialog-header-link"
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  hidden
+                >
+                  Visit live product <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
               </div>
             </div>
             <div class="work-dialog-body">
@@ -656,9 +666,66 @@
                   </div>
                 </div>
                 <div class="recognition-list">
-                  <span><i class="fa-solid fa-star" aria-hidden="true"></i><span>Code Phoenix Award</span><small>2022</small></span>
-                  <span><i class="fa-solid fa-star" aria-hidden="true"></i><span>Top Squad Award</span><small>2022</small></span>
-                  <span><i class="fa-solid fa-star" aria-hidden="true"></i><span>Exceptional Greenhorn Award</span><small>2020</small></span>
+                  <button
+                    class="recognition-item certificate-open"
+                    type="button"
+                    data-certificate-title="MCA Project Mentorship Appreciation"
+                    data-certificate-meta="Manipal University Jaipur · 2026"
+                    data-certificate-src="./images/muj.png"
+                    data-certificate-orientation="portrait"
+                    aria-haspopup="dialog"
+                    aria-controls="certificate-dialog"
+                  >
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <span>MCA Project Mentorship Appreciation · Manipal University Jaipur</span>
+                    <small>2026</small>
+                    <i class="fa-solid fa-expand recognition-open-icon" aria-hidden="true"></i>
+                  </button>
+                  <button
+                    class="recognition-item certificate-open"
+                    type="button"
+                    data-certificate-title="Code Phoenix Award"
+                    data-certificate-meta="2022"
+                    data-certificate-src=""
+                    data-certificate-orientation="landscape"
+                    aria-haspopup="dialog"
+                    aria-controls="certificate-dialog"
+                  >
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <span>Code Phoenix Award</span>
+                    <small>2022</small>
+                    <i class="fa-solid fa-expand recognition-open-icon" aria-hidden="true"></i>
+                  </button>
+                  <button
+                    class="recognition-item certificate-open"
+                    type="button"
+                    data-certificate-title="Top Squad Award"
+                    data-certificate-meta="2022"
+                    data-certificate-src=""
+                    data-certificate-orientation="landscape"
+                    aria-haspopup="dialog"
+                    aria-controls="certificate-dialog"
+                  >
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <span>Top Squad Award</span>
+                    <small>2022</small>
+                    <i class="fa-solid fa-expand recognition-open-icon" aria-hidden="true"></i>
+                  </button>
+                  <button
+                    class="recognition-item certificate-open"
+                    type="button"
+                    data-certificate-title="Exceptional Greenhorn Award"
+                    data-certificate-meta="2020"
+                    data-certificate-src=""
+                    data-certificate-orientation="landscape"
+                    aria-haspopup="dialog"
+                    aria-controls="certificate-dialog"
+                  >
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    <span>Exceptional Greenhorn Award</span>
+                    <small>2020</small>
+                    <i class="fa-solid fa-expand recognition-open-icon" aria-hidden="true"></i>
+                  </button>
                 </div>
                 <div class="credential-list">
                   <a href="https://www.udemy.com/certificate/UC-73700355-7a56-4350-bf6c-640100a8c21d/" target="_blank" rel="noreferrer">
@@ -673,6 +740,39 @@
           </div>
         </div>
       </section>
+
+      <dialog
+        class="work-dialog certificate-dialog"
+        id="certificate-dialog"
+        aria-labelledby="certificate-dialog-title"
+        aria-describedby="certificate-dialog-meta"
+      >
+        <div class="work-dialog-shell certificate-dialog-shell">
+          <button class="work-dialog-close certificate-dialog-close" type="button" aria-label="Close certificate preview">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+          <div class="certificate-dialog-head">
+            <span class="certificate-dialog-icon" aria-hidden="true">
+              <i class="fa-solid fa-award"></i>
+            </span>
+            <div>
+              <span class="work-dialog-kicker">Recognition</span>
+              <h3 id="certificate-dialog-title"></h3>
+              <p id="certificate-dialog-meta"></p>
+            </div>
+          </div>
+          <div class="certificate-preview">
+            <img id="certificate-dialog-image" alt="" hidden />
+            <div class="certificate-placeholder" id="certificate-placeholder">
+              <span class="certificate-placeholder-icon" aria-hidden="true">
+                <i class="fa-regular fa-file-image"></i>
+              </span>
+              <strong>Certificate preview</strong>
+              <p>The scanned copy will be added here soon.</p>
+            </div>
+          </div>
+        </div>
+      </dialog>
 
       <section class="section section-anchor" id="contact" aria-labelledby="contact-title">
         <div class="shell">

@@ -142,6 +142,28 @@ button {
   scroll-margin-top: var(--header-height);
 }
 
+.reveal-ready {
+  --reveal-delay: 0ms;
+  opacity: 0;
+  translate: 0 14px;
+}
+
+.reveal-ready[data-reveal-direction="left"] {
+  translate: -12px 0;
+}
+
+.reveal-ready[data-reveal-direction="up"] {
+  translate: 0 14px;
+}
+
+.reveal-ready[data-reveal-direction="right"] {
+  translate: 12px 0;
+}
+
+.reveal-ready.is-revealed {
+  animation: reveal-element 720ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay) both;
+}
+
 .section-soft {
   background: var(--bg-alt);
 }
@@ -209,6 +231,7 @@ p {
 }
 
 .site-header {
+  --page-progress: 0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -216,6 +239,19 @@ p {
   background: var(--bg);
   border-bottom: 1px solid transparent;
   transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.site-header::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+  content: "";
+  pointer-events: none;
+  transform: scaleX(var(--page-progress));
+  transform-origin: left;
 }
 
 .site-header.header-scrolled,
@@ -1551,10 +1587,6 @@ html[data-theme="light"] .hero-art-dark {
   box-shadow: 0 32px 90px rgba(0, 0, 0, 0.42);
 }
 
-.work-dialog[open] {
-  animation: work-dialog-enter 220ms var(--ease);
-}
-
 .work-dialog::backdrop {
   background: rgba(4, 8, 14, 0.76);
   backdrop-filter: blur(8px);
@@ -1745,20 +1777,13 @@ html[data-theme="light"] .hero-art-dark {
   display: none;
 }
 
-body.work-dialog-open {
-  overflow: hidden;
+.work-dialog-header-link {
+  display: none;
 }
 
-@keyframes work-dialog-enter {
-  from {
-    opacity: 0;
-    transform: translateY(12px) scale(0.985);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+body.work-dialog-open,
+body.certificate-dialog-open {
+  overflow: hidden;
 }
 
 @media (hover: hover) {
@@ -2097,13 +2122,20 @@ body.work-dialog-open {
   line-height: 1.45;
 }
 
-.recognition-list > span {
+.recognition-item {
   display: grid;
-  grid-template-columns: 18px minmax(0, 1fr) auto;
+  grid-template-columns: 18px minmax(0, 1fr) auto 16px;
   align-items: center;
-  padding: 12px 0;
+  width: 100%;
+  padding: 12px 8px;
   gap: 8px;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
   border-bottom: 1px solid var(--border);
+  transition: color 180ms ease, background-color 180ms ease;
 }
 
 .recognition-list i {
@@ -2111,10 +2143,151 @@ body.work-dialog-open {
   font-size: 0.58rem;
 }
 
-.recognition-list > span > span {
+.recognition-item > span {
   color: var(--text);
   font-size: 0.72rem;
   font-weight: 700;
+}
+
+.recognition-item .recognition-open-icon {
+  color: var(--text-soft);
+  opacity: 0.65;
+  transition: color 180ms ease, opacity 180ms ease, transform 180ms var(--ease);
+}
+
+.recognition-item:hover,
+.recognition-item:focus-visible {
+  background: var(--surface-hover);
+}
+
+.recognition-item:hover .recognition-open-icon,
+.recognition-item:focus-visible .recognition-open-icon {
+  color: var(--accent);
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.recognition-item:focus-visible {
+  outline-offset: -2px;
+}
+
+.certificate-dialog {
+  width: min(840px, calc(100vw - 36px));
+  height: min(760px, calc(100dvh - 36px));
+}
+
+.certificate-dialog[data-certificate-orientation="portrait"] {
+  width: min(620px, calc(100vw - 36px));
+}
+
+.certificate-dialog-head {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  align-items: center;
+  flex: 0 0 auto;
+  padding: 26px 74px 24px 26px;
+  gap: 16px;
+  background: linear-gradient(135deg, var(--accent-soft), transparent 72%);
+  border-bottom: 1px solid var(--border);
+}
+
+.certificate-dialog-shell {
+  height: 100%;
+}
+
+.certificate-dialog-icon,
+.certificate-placeholder-icon {
+  display: grid;
+  color: var(--accent-strong);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  place-items: center;
+}
+
+.certificate-dialog-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  box-shadow: 0 10px 24px rgba(8, 13, 23, 0.14);
+}
+
+.certificate-dialog-head h3 {
+  margin: 5px 0 2px;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.certificate-dialog-head p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+}
+
+.certificate-preview {
+  display: grid;
+  min-height: 0;
+  padding: 24px;
+  overflow: hidden;
+  flex: 1 1 auto;
+  background: var(--bg-alt);
+  place-items: center;
+}
+
+.certificate-preview > img {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.certificate-placeholder {
+  display: grid;
+  aspect-ratio: 16 / 10;
+  min-height: 360px;
+  padding: 34px;
+  align-content: center;
+  justify-items: center;
+  color: var(--text-muted);
+  text-align: center;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    repeating-linear-gradient(135deg, var(--border), var(--border) 7px, transparent 7px, transparent 14px) border-box;
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+
+.certificate-dialog[data-certificate-orientation="portrait"] .certificate-placeholder {
+  width: min(100%, 420px);
+  aspect-ratio: 1 / 1.414;
+  margin: 0 auto;
+}
+
+.certificate-placeholder[hidden] {
+  display: none;
+}
+
+.certificate-placeholder-icon {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 16px;
+  border-radius: 14px;
+  font-size: 1rem;
+}
+
+.certificate-placeholder strong {
+  margin-bottom: 4px;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.certificate-placeholder p {
+  margin: 0;
+  font-size: 0.72rem;
 }
 
 .credential-list {
@@ -2525,6 +2698,13 @@ body.work-dialog-open {
   }
 }
 
+@keyframes reveal-element {
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
 @media (max-width: 1120px) {
   .site-nav {
     position: fixed;
@@ -2857,14 +3037,36 @@ body.work-dialog-open {
 
   .work-dialog {
     width: calc(100vw - 20px);
-    max-height: calc(100vh - 20px);
+    max-height: calc(100vh - 48px);
+    max-height: calc(100dvh - 48px);
     border-radius: 12px;
+  }
+
+  .work-dialog:not(.certificate-dialog) {
+    max-height: 85vh;
+    max-height: 85dvh;
+  }
+
+  .work-dialog-shell,
+  .work-dialog-body {
+    min-height: 0;
   }
 
   .work-dialog-head {
     grid-template-columns: 1fr;
     padding: 24px 62px 22px 22px;
     gap: 14px;
+  }
+
+  .work-dialog-header-link:not([hidden]) {
+    display: inline-flex;
+    width: fit-content;
+    margin-top: 14px;
+    gap: 10px;
+  }
+
+  .work-dialog-body .work-dialog-link {
+    display: none;
   }
 
   .work-dialog-icon {
@@ -2875,6 +3077,31 @@ body.work-dialog-open {
   .work-dialog-body {
     padding: 22px;
     gap: 24px;
+  }
+
+  .certificate-dialog-head {
+    grid-template-columns: 40px minmax(0, 1fr);
+    padding: 20px 58px 18px 18px;
+    gap: 12px;
+  }
+
+  .certificate-dialog-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .certificate-dialog-head h3 {
+    font-size: 1.45rem;
+  }
+
+  .certificate-preview {
+    padding: 14px;
+  }
+
+  .certificate-placeholder {
+    min-height: 260px;
+    padding: 24px;
   }
 
   .experience-intro .button {
@@ -2957,11 +3184,23 @@ body.work-dialog-open {
   }
 
   .skill-chip {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .site-header::after {
+    display: none;
+  }
+
+  .reveal-ready,
+  .reveal-ready[data-reveal-direction] {
+    animation: none;
+    opacity: 1;
+    translate: none;
+  }
+
   *,
   *::before,
   *::after {

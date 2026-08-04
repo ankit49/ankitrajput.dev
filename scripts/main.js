@@ -21,6 +21,13 @@ const workDialogHighlights = document.getElementById("work-dialog-highlights");
 const workDialogTags = document.getElementById("work-dialog-tags");
 const workDialogIcon = document.getElementById("work-dialog-icon");
 const workDialogLink = document.getElementById("work-dialog-link");
+const workDialogHeaderLink = document.getElementById("work-dialog-header-link");
+const certificateDialog = document.getElementById("certificate-dialog");
+const certificateDialogClose = certificateDialog.querySelector(".certificate-dialog-close");
+const certificateDialogTitle = document.getElementById("certificate-dialog-title");
+const certificateDialogMeta = document.getElementById("certificate-dialog-meta");
+const certificateDialogImage = document.getElementById("certificate-dialog-image");
+const certificatePlaceholder = document.getElementById("certificate-placeholder");
 
 const workProjects = {
   toolsera: {
@@ -109,6 +116,8 @@ const populateWorkDialog = (project) => {
   workDialogStack.hidden = technologies.length === 0;
   workDialogLink.hidden = !hasLink;
   workDialogLink.href = project.url || "#";
+  workDialogHeaderLink.hidden = !hasLink;
+  workDialogHeaderLink.href = project.url || "#";
   workDialogSide.hidden = technologies.length === 0 && !hasLink;
   workDialogBody.classList.toggle("is-single-column", workDialogSide.hidden);
   workDialogHighlights.replaceChildren(...project.highlights.map((highlight) => {
@@ -144,6 +153,48 @@ workDialog.addEventListener("click", (event) => {
 workDialog.addEventListener("close", () => {
   body.classList.remove("work-dialog-open");
   lastWorkTrigger?.focus();
+});
+
+let lastCertificateTrigger = null;
+
+document.querySelectorAll(".certificate-open").forEach((button) => {
+  button.addEventListener("click", () => {
+    const imageSource = button.dataset.certificateSrc?.trim();
+
+    lastCertificateTrigger = button;
+    certificateDialogTitle.textContent = button.dataset.certificateTitle;
+    certificateDialogMeta.textContent = button.dataset.certificateMeta;
+    certificateDialog.dataset.certificateOrientation = button.dataset.certificateOrientation || "landscape";
+    certificateDialogImage.hidden = !imageSource;
+    certificatePlaceholder.hidden = Boolean(imageSource);
+
+    if (imageSource) {
+      certificateDialogImage.src = imageSource;
+      certificateDialogImage.alt = `Scanned certificate for ${button.dataset.certificateTitle}`;
+    } else {
+      certificateDialogImage.removeAttribute("src");
+      certificateDialogImage.alt = "";
+    }
+
+    body.classList.add("certificate-dialog-open");
+    certificateDialog.showModal();
+  });
+});
+
+certificateDialogClose.addEventListener("click", () => certificateDialog.close());
+
+certificateDialog.addEventListener("click", (event) => {
+  if (event.target === certificateDialog) certificateDialog.close();
+});
+
+certificateDialogImage.addEventListener("error", () => {
+  certificateDialogImage.hidden = true;
+  certificatePlaceholder.hidden = false;
+});
+
+certificateDialog.addEventListener("close", () => {
+  body.classList.remove("certificate-dialog-open");
+  lastCertificateTrigger?.focus();
 });
 
 const updateThemeUI = () => {
@@ -207,13 +258,77 @@ const sectionObserver = new IntersectionObserver(
 
 sections.forEach((section) => sectionObserver.observe(section));
 
+const revealMotionAllowed = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (revealMotionAllowed) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-revealed");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "0px 0px -9%", threshold: 0.12 },
+  );
+
+  const registerReveal = (selector, direction, delay = 0, stagger = 0) => {
+    document.querySelectorAll(selector).forEach((element, index) => {
+      element.classList.add("reveal-ready");
+      element.dataset.revealDirection = direction;
+      element.style.setProperty("--reveal-delay", `${delay + index * stagger}ms`);
+      revealObserver.observe(element);
+    });
+  };
+
+  registerReveal(".hero-intro, .hero-name, .hero-role, .hero-lede, .hero-actions, .hero-experience", "up", 0, 55);
+  registerReveal(".hero-artwork", "right", 100);
+
+  registerReveal(".about-heading > *", "left", 0, 70);
+  registerReveal(
+    ".about-portrait, .about-lead, .about-content > .section-copy, .about-principle, .feature-item",
+    "up",
+    60,
+    65,
+  );
+
+  registerReveal(".expertise-heading > *", "left", 0, 70);
+  registerReveal(".process-step", "up", 50, 85);
+  registerReveal(".skills-intro > *", "left", 0, 70);
+  registerReveal(".skill-group", "up", 50, 75);
+
+  registerReveal(".work-heading > *", "left", 0, 70);
+  registerReveal(".work-card", "up", 50, 85);
+
+  registerReveal(".experience-heading > *", "left", 0, 70);
+  registerReveal(".career-panel-heading, .career-entry", "up", 50, 70);
+  registerReveal(".career-side-card", "up", 110, 80);
+
+  registerReveal(".contact-heading > *", "left", 0, 70);
+  registerReveal(".contact-primary", "up", 50);
+  registerReveal(".contact-detail-row, .contact-socials", "up", 110, 70);
+}
+
 const updateHeader = () => {
   header.classList.toggle("header-scrolled", window.scrollY > 18);
+  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pageProgress = scrollableHeight > 0 ? Math.min(window.scrollY / scrollableHeight, 1) : 0;
+  header.style.setProperty("--page-progress", String(pageProgress));
 };
 
-window.addEventListener("scroll", updateHeader, { passive: true });
+let scrollFrame = null;
+const requestScrollUpdate = () => {
+  if (scrollFrame) return;
+  scrollFrame = requestAnimationFrame(() => {
+    updateHeader();
+    scrollFrame = null;
+  });
+};
+
+window.addEventListener("scroll", requestScrollUpdate, { passive: true });
 window.addEventListener("resize", () => {
   if (window.innerWidth > 1120) closeMenu();
+  requestScrollUpdate();
 });
 
 document.querySelectorAll("[data-copy-target]").forEach((button) => {
